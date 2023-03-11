@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if(empty($_SESSION['user'])){
+	header('Location: login.php');	
+}
+?>
+
 <!DOCTYPE html>
 <html lang="cs">
 	<head>
@@ -8,7 +16,18 @@
 	<body>
 
 		<div id="header" >
-			header
+			<p>Logo</p>
+
+			<form method="post" action="filter.php">
+				<input type="text" name="search" placeholder="Vyhledat..."/>
+				<label for="min">Min</label>
+				<input type="number" name="min" placeholder="Min"/>
+				<label for="max">Max</label>
+				<input type="number" name="max" placeholder="Max"/>
+				<button type="submit">Vyhledat</button>
+			</form>
+
+			<button>Přidat Inzerát</button>
 		</div>
 
 		<main>
