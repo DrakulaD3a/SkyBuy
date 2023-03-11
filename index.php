@@ -1,4 +1,5 @@
 <?php
+require_once 'index_backend.php';
 session_start();
 
 if(empty($_SESSION['user'])){
