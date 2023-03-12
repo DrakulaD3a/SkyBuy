@@ -15,7 +15,7 @@ if (!empty($_SESSION['user'])) {
 	</head>
 	<body>
 		
-		<form method="post" action="signup.php" >
+		<form method="post" action="create_user.php" >
 
 			<label for="username" >Username</label>
 			<input name="username" id="username" required />
@@ -23,7 +23,10 @@ if (!empty($_SESSION['user'])) {
 			<label for="password" >Heslo</label>
 			<input type="password" name="password" id="password" required />
 
-			<button type="submit" id="submit" >Přihlásit se</button>
+			<label for="password" >Heslo znovu</label>
+			<input type="password" name="password-repeat" id="password-repeat" required />
+
+			<button type="submit" id="submit" >Zaregistrovat se</button>
 
 		</form>
 
