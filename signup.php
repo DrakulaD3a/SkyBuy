@@ -1,46 +1,34 @@
 <?php
+session_start();
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-require_once('config.php');
-
-['username' => $username, 'password' => $password, 'password-repeat' => $password_repeat] = $_POST;
-
-$db = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASSWORD);
-
-if (!empty($username) && !empty($password)) {
-	if ($password == $password_repeat) {
-		if (is_password_valid($password)) {
-			$stmt = $db->prepare("INSERT INTO users (username, password) VALUES (?, ?);");
-			$stmt->execute([$username, $password]);
-		}
-	}
+if (!empty($_SESSION['user'])) {
+	header('Location: index.php');
 }
+?>
 
-function is_password_valid(string $password): bool {
-	$password_len = strlen($password);
-	if ($password_len < 8) {
-		return false;
-	}
+<!DOCTYPE html>
+<html lang="cs">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Bazoš</title>
+		<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+	</head>
+	<body>
+		
+		<form method="post" action="signup_backend.php" >
 
-	$numbers = 0;
-	$lowercase = false;
-	$uppercase = false;
-	for ($i = 0; $i < $password_len; $i++) {
-		if (ctype_digit($password[$i])) {
-			$numbers++;
-		} elseif (ctype_lower($password[$i])) {
-			$lowercase = true;
-		} elseif (ctype_upper($password[$i])) {
-			$uppercase = true;
-		}
+			<label for="username" >Username</label>
+			<input name="username" id="username" required />
 
-		if ($numbers >= 2 && $lowercase && $uppercase)  {
-			return true;
-		}
-	}
+			<label for="password" >Heslo</label>
+			<input type="password" name="password" id="password" required />
 
-	return false;
-}
+      <label for="password-repeat" >Heslo</label>
+			<input type="password" name="password-repeat" id="password-repeat" required />
+
+			<button type="submit" id="submit" >Přihlásit se</button>
+
+		</form>
+
+	</body>
+</html>
