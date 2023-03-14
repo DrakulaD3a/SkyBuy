@@ -1,8 +1,6 @@
 <?php
 
-$search = $_POST['search'];
-$min = $_POST['min'];
-$max = $_POST['max'];
+['search' => $search, 'min' => $min, 'max' => $max] = $_POST;
 
 echo 'Search: ' . $search . '<br>';
 echo 'Min: ' . $min . '<br>';

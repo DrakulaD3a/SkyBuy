@@ -1,9 +1,8 @@
 <?php
-require_once 'index_backend.php';
 session_start();
 
 if(empty($_SESSION['user'])){
-	header('Location: login.php');	
+	header('Location: login.php');
 }
 ?>
 
@@ -14,29 +13,41 @@ if(empty($_SESSION['user'])){
 		<title>Bazoš</title>
 		<link rel="stylesheet" type="text/css" href="stylesheet.css" />
 	</head>
-	<body>
+	<body id="main-body">
 
-		<div id="header" >
+		<div id="header">
 			<p>Logo</p>
 
-			<form method="post" action="filter.php">
-				<input type="text" name="search" placeholder="Vyhledat..."/>
-				<label for="min">Min</label>
-				<input type="number" name="min" placeholder="Min"/>
-				<label for="max">Max</label>
-				<input type="number" name="max" placeholder="Max"/>
+			<form method="post" action="filter.php" class="search-bar space-between" >
+				<label for="search">Vyhledat:</label>
+				<input type="text" name="search" class="search" />
+				<label for="min">Cena od:</label>
+				<input type="number" name="min" id="min" />
+				<label for="max">do:</label>
+				<input type="number" name="max" id="max" />
 				<button type="submit">Vyhledat</button>
 			</form>
 
-			<button>Přidat Inzerát</button>
+			<a href="add.php" id="add-poster" class="center" >Přidat Inzerát</a>
 		</div>
 
-		<main>
+		<main id="main">
 			main
 		</main>
 
 		<div id="side-bar" >
-			side-bar
+			<h3>Kategorie:</h3>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
 		</div>
 
 		<div id="footer" >
