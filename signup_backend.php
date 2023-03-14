@@ -9,19 +9,36 @@ require_once('config.php');
 ['username' => $username, 'password' => $password, 'password-repeat' => $password_repeat] = $_POST;
 
 $db = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASSWORD);
+?>
 
-if (!empty($username) && !empty($password)) {
-	if ($password == $password_repeat) {
-		if (is_password_valid($password)) {
-			$stmt = $db->prepare("INSERT INTO users (username, password) VALUES (?, ?);");
-			$stmt->execute([$username, $password]);
-		}
-	}
-}
+<!DOCTYPE html>
+<html lang="cs">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Bazoš</title>
+		<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+	</head>
+	<body>
+		<?php
+      if (!empty($username) && !empty($password)) {
+        if ($password == $password_repeat) {
+          if (is_password_valid($password)) {
+            $stmt = $db->prepare("INSERT INTO users (username, password) VALUES (?, ?);");
+            $stmt->execute([$username, $password]);
+          }
+        }
+      }
+    ?>
+	</body>
+</html>
+
+<?php
+
 
 function is_password_valid(string $password): bool {
 	$password_len = strlen($password);
 	if ($password_len < 8) {
+    echo "Password is too short";
 		return false;
 	}
 
@@ -41,6 +58,6 @@ function is_password_valid(string $password): bool {
 			return true;
 		}
 	}
-
 	return false;
 }
+?>
