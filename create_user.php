@@ -8,7 +8,7 @@ require_once('config.php');
 
 ['username' => $username, 'password' => $password, 'password-repeat' => $password_repeat] = $_POST;
 
-$db = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASSWORD);
+$db = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_USERNAME, DB_USERNAME, DB_PASSWORD);
 
 if (!empty($username) && !empty($password)) {
 	if ($password == $password_repeat) {
