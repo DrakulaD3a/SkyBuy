@@ -15,7 +15,7 @@ if (!empty($_SESSION['user'])) {
 	</head>
 	<body>
 		
-		<form method="post" action="signup.php" >
+		<form method="post" action="login_backend.php" >
 
 			<label for="username" >Username</label>
 			<input name="username" id="username" required />
