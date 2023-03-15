@@ -9,6 +9,7 @@ session_start();
 require_once('config.php');
 
 ['username' => $username, 'password' => $password, 'password-repeat' => $password_repeat] = $_POST;
+$username = strtolower($username);
 
 $db = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_USERNAME, DB_USERNAME, DB_PASSWORD);
 
