@@ -20,13 +20,14 @@ if (!empty($_SESSION['user'])) {
 			<label for="username" >Username</label>
 			<input name="username" id="username" required />
 
-			<label for="password" >Heslo</label>
+			<label for="password" >Password</label>
 			<input type="password" name="password" id="password" required />
 
-			<label for="password" >Heslo znovu</label>
+			<label for="password" >Repeat password</label>
 			<input type="password" name="password-repeat" id="password-repeat" required />
 
 			<button type="submit" id="submit" >Zaregistrovat se</button>
+			<p>Already have an account? <a href="login.php" >Sign in</a></p>
 
 		</form>
 

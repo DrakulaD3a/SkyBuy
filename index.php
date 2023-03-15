@@ -1,8 +1,15 @@
 <?php
 session_start();
 
-if(!empty($_SESSION['user'])){
+if(empty($_SESSION['user'])){
 	header('Location: login.php');
+}
+
+if(isset($_POST['search'])){
+	if (isset($_POST['min']) && isset($_POST['max'])){
+		// TODO: Get an array of all objects in the db
+		// $objects
+	}
 }
 ?>
 
@@ -18,7 +25,7 @@ if(!empty($_SESSION['user'])){
 		<div id="header">
 			<p>Logo</p>
 
-			<form method="post" action="filter.php" class="search-bar space-between" >
+			<form method="post" class="search-bar space-between" >
 				<label for="search">Vyhledat:</label>
 				<input type="text" name="search" class="search" />
 				<label for="min">Cena od:</label>
@@ -32,27 +39,28 @@ if(!empty($_SESSION['user'])){
 		</div>
 
 		<main id="main">
-			main
+<?php
+/* foreach ($objects as $object) {
+} */
+?>
 		</main>
 
 		<div id="side-bar" >
 			<h3>Kategorie:</h3>
-			<a>1</a>
-			<a>1</a>
-			<a>1</a>
-			<a>1</a>
-			<a>1</a>
-			<a>1</a>
-			<a>1</a>
-			<a>1</a>
-			<a>1</a>
-			<a>1</a>
-			<a>1</a>
+<?php
+// TODO: Get from db
+/* $categories = $pdo->query("SELECT * FROM categories")->fetchAll();
+for ($i = 0; $i < count($categories); $i++) {
+	echo '<a></a>';
+} */
+?>
 		</div>
 
-		<div id="footer" >
-			footer
-		</div>
+		<footer id="footer">
+			<!-- TODO -->
+			<p>footer</p>
+			<p>footer</p>
+		</footer>
 
 	</body>
 </html>
