@@ -1,6 +1,8 @@
 <?php
 
-['username' => $username, 'password' => $password] = $_POST;
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 require_once("config.php");
 
@@ -20,15 +22,15 @@ function login(string $username, string $password, $db): bool {
 	return false;
 }
 
-if (isset($_POST['user']) && isset($_POST['password'])) {
-	$user = $_POST['user'];
+if (isset($_POST['username']) && isset($_POST['password'])) {
+	$user = $_POST['username'];
 	$password = $_POST['password'];
 
 	if (login($user, $password, $db)) {
-		$_SESSION['username'] = $user;
-		header('Location: login.php');
+		$_SESSION['user'] = $user;
+		header('Location: index.php');
 	} else {
-		header('Location: login.php');
 		die();
+		header('Location: login.php');
 	}
 }
