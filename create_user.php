@@ -12,16 +12,24 @@ require_once('config.php');
 
 $db = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_USERNAME, DB_USERNAME, DB_PASSWORD);
 
+// TODO: Redirect back after failed login
 if (!empty($username) && !empty($password)) {
 	if ($password == $password_repeat) {
 		if (is_password_valid($password)) {
-			$stmt = $db->prepare("INSERT INTO users (username, password) VALUES (?, ?);");
-			// TODO: Check if username already exists
-			$stmt->execute([$username, md5($password)]);
+			if (is_username_available($username, $db)) {
+				$stmt = $db->prepare("INSERT INTO users (username, password) VALUES (?, ?);");
+				$stmt->execute([$username, md5($password)]);
 
-			$_SESSION['user'] = $username;
-			header('Location: index.php');
+				$_SESSION['user'] = $username;
+				header('Location: index.php');
+			} else {
+				echo 'Username already exists';
+			}
+		} else {
+			echo 'Password is not valid';
 		}
+	} else {
+		echo 'Passwords do not match';
 	}
 }
 
@@ -49,4 +57,10 @@ function is_password_valid(string $password): bool {
 	}
 
 	return false;
+}
+
+function is_username_available(string $username, $db): bool {
+	$query = $db->prepare("SELECT * FROM users WHERE username = ?;");
+	$query->execute([$username]);
+	return $query->rowCount() == 0;
 }

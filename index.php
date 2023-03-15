@@ -14,6 +14,7 @@ if(isset($_POST['search'])){
 ?>
 
 <!DOCTYPE html>
+<!-- TODO: CSS, a lot -->
 <html lang="cs">
 	<head>
 		<meta charset="UTF-8"/>
@@ -35,7 +36,7 @@ if(isset($_POST['search'])){
 				<button type="submit">Vyhledat</button>
 			</form>
 
-	<!-- TODO: Add a logout button -->
+			<a href="logout.php">Odhlásit</a>
 
 			<a href="add.php" id="add-poster" class="center" >Přidat Inzerát</a>
 		</div>
