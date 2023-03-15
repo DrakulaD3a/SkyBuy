@@ -16,9 +16,8 @@ if (!empty($username) && !empty($password)) {
 	if ($password == $password_repeat) {
 		if (is_password_valid($password)) {
 			$stmt = $db->prepare("INSERT INTO users (username, password) VALUES (?, ?);");
-			// TODO: need to hash it
 			// TODO: Check if username already exists
-			$stmt->execute([$username, $password]);
+			$stmt->execute([$username, md5($password)]);
 
 			$_SESSION['user'] = $username;
 			header('Location: index.php');
