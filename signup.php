@@ -1,34 +1,36 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+require_once("config.php");
+
 session_start();
 
-if (!empty($_SESSION['user'])) {
-	header('Location: index.php');
+$db = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_USERNAME, DB_USERNAME, DB_PASSWORD);
+
+function login(string $username, string $password, $db): bool {
+	$query = $db->query("SELECT * FROM users");
+	$users = $query->fetchAll();
+
+	for ($i = 0; $i < count($users); $i++) {
+		if ($username == $users[$i]['username'] && md5($password) == $users[$i]['password']) {
+			return true;
+		}
+	}
+	return false;
 }
-?>
 
-<!DOCTYPE html>
-<html lang="cs">
-	<head>
-		<meta charset="UTF-8"/>
-		<title>Bazoš</title>
-		<link rel="stylesheet" type="text/css" href="stylesheet.css" />
-	</head>
-	<body>
-		
-		<form method="post" action="signup_backend.php" >
+if (isset($_POST['username']) && isset($_POST['password'])) {
+	$user = strtolower($_POST['username']);
+	$password = $_POST['password'];
 
-			<label for="username" >Username</label>
-			<input name="username" id="username" required />
-
-			<label for="password" >Heslo</label>
-			<input type="password" name="password" id="password" required />
-
-      <label for="password-repeat" >Heslo</label>
-			<input type="password" name="password-repeat" id="password-repeat" required />
-
-			<button type="submit" id="submit" >Přihlásit se</button>
-
-		</form>
-
-	</body>
-</html>
+	if (login($user, $password, $db)) {
+		$_SESSION['user'] = $user;
+		header('Location: index.php');
+	} else {
+		die();
+		header('Location: login.php');
+	}
+}

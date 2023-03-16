@@ -15,15 +15,16 @@ if (!empty($_SESSION['user'])) {
 	</head>
 	<body>
 		
-		<form method="post" action="login_backend.php" >
+		<form method="post" action="signup.php" >
 
 			<label for="username" >Username</label>
 			<input name="username" id="username" required />
 
-			<label for="password" >Heslo</label>
+			<label for="password" >Password</label>
 			<input type="password" name="password" id="password" required />
 
 			<button type="submit" id="submit" >Přihlásit se</button>
+			<p>Don't have an account yet? <a href="register.php" >Create one now</a></p>
 
 		</form>
 
