@@ -3,10 +3,6 @@ html, body {
 	margin: 0;
 }
 
-img {
-	width: 100%;
-}
-
 #main-body {
 	display: grid;
 	height: 100vh;
@@ -90,7 +86,8 @@ input[type=number] {
 	background: whitesmoke;
 	color: black;
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 1rem;
 }
 
 .poster {
@@ -103,6 +100,10 @@ input[type=number] {
 	text-decoration: none;
 	color: inherit;
 	height: min-content;
+}
+
+.poster > img {
+	width: 100%;
 }
 
 #footer {
