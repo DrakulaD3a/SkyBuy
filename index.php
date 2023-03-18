@@ -1,14 +1,18 @@
 <?php
 session_start();
 
-if(empty($_SESSION['user'])){
+if (empty($_SESSION['user'])){
 	header('Location: login.php');
 }
 
-if(isset($_POST['search'])){
+if (isset($_POST['search'])){
 	if (isset($_POST['min']) && isset($_POST['max'])){
 		// TODO: Get an array of all objects in the db
 		// $objects
+		if (isset($_GET['category'])) {
+			// Query for a specific category
+			// FIXME: Check if category exists
+		}
 	}
 }
 ?>
@@ -42,6 +46,21 @@ if(isset($_POST['search'])){
 		</div>
 
 		<main id="main">
+			<a href="product.php" class="poster">
+				<img src="https://www.bhphotovideo.com/images/images2500x2500/asus_x55a_ds91_15_6_notebook_computer_924693.jpg" alt="poster" />
+				<h3>Inzeráty</h3>
+				<p>
+					Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupclassatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.
+				</p>
+			</a>
+
+			<a href="product.php" class="poster">
+				<img src="https://www.bhphotovideo.com/images/images2500x2500/asus_x55a_ds91_15_6_notebook_computer_924693.jpg" alt="poster" />
+				<h3>Inzeráty</h3>
+				<p>
+					Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupclassatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.
+				</p>
+			</a>
 <?php
 /* foreach ($objects as $object) {
 } */
@@ -52,9 +71,10 @@ if(isset($_POST['search'])){
 			<h3>Kategorie:</h3>
 <?php
 // TODO: Get from db
-/* $categories = $pdo->query("SELECT * FROM categories")->fetchAll();
-for ($i = 0; $i < count($categories); $i++) {
-	echo '<a></a>';
+
+/* $categories = $db->query("SELECT * FROM categories")->fetchAll();
+foreach ($categories as $category) {
+	echo "<a href='index.php?category=$category' >$category</a>";
 } */
 ?>
 		</div>
