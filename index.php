@@ -37,21 +37,23 @@ if (isset($_POST["search"])) {
 				<input type="number" name="min" class="width-2" />
 				<label for="max">do:</label>
 				<input type="number" name="max" class="width-2" />
-				<!-- TODO: Design this button -->
 				<button type="submit">Vyhledat</button>
 			</form>
 
-
-			<!-- TODO: Make a dropdown menu -->
-			<a href="logout.php">Odhlásit</a>
-			<a href="add.php" class="flex justify-content align-items bg-dark-blue round-border-bottom no-text-decoration white padding-0-1 height-3" >
-				Přidat Inzerát
-			</a>
+			<div id="profile">
+				<span class="flex justify-content align-items bg-dark-blue round-border-bottom no-text-decoration white padding-0-1 height-3" >
+					Profil
+				</span>
+				<div id="profile-content" >
+					<a href="logout.php">Odhlásit</a>
+					<a href="add.php">Přidat Inzerát</a>
+				</div>
+			</div>
 		</div>
 
 		<main id="main" class="bg-white black" >
 
-<!-- FIXME: Remove this part, just for testing -->
+			<!-- FIXME: Remove this part, just for testing -->
 			<a href="product.php" class="flex align-items-start direction-column no-text-decoration height-min-content padding-1 color-inherit gray-border-right gap-half">
 				<img src="https://www.bhphotovideo.com/images/images2500x2500/asus_x55a_ds91_15_6_notebook_computer_924693.jpg" alt="poster" width="100%" />
 				<h3>Inzeráty</h3>

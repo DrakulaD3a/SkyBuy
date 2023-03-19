@@ -60,6 +60,29 @@ button {
 	grid-area: 3 / 1 / span 1 / span 2;
 }
 
+#profile {
+	display: inline-block;
+}
+
+#profile-content {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	background-color: var(--color-light-blue);
+}
+
+#profile-content a {
+	display: block;
+}
+
+#profile-content a:hover {
+	background-color: var(--color-dark-blue);
+}
+
+#profile:hover #profile-content {
+	display: block;
+}
+
 /* ============================================================= */
 
 .bg-black {
