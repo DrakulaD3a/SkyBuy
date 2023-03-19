@@ -25,7 +25,17 @@ button {
 	background-color: transparent;
 	cursor: pointer;
 	border-radius: 0.5rem;
+	color: white;
 }
+
+:root {
+	--color-black: #00040d;
+	--color-dark-blue: #3850ba;
+	--color-light-blue: #adddf5;
+	--color-white: #ffffff;
+}
+
+/* ============================================================= */
 
 #main-body {
 	display: grid;
@@ -51,13 +61,6 @@ button {
 }
 
 /* ============================================================= */
-
-:root {
-	--color-black: #00040d;
-	--color-dark-blue: #3850ba;
-	--color-light-blue: #adddf5;
-	--color-white: #ffffff;
-}
 
 .bg-black {
 	background-color: var(--color-black);
