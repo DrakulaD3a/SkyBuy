@@ -16,7 +16,7 @@ if (!empty($_SESSION["username"])) {
 	<body>
 		
 		<main class="padding-1" >
-			<form method="post" action="signup.php" class="flex direction-column align-items justify-content gap-half" >
+			<form method="post" action="signin.php" class="flex direction-column align-items justify-content gap-half" >
 
 				<label for="username" >Uživatelské jméno</label>
 				<input name="username" id="username" required />

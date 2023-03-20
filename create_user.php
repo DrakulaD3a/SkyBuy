@@ -15,11 +15,11 @@ require_once "config.php";
 ] = $_POST;
 $username = strtolower($username);
 
-$db = new PDO(
+/*$db = new PDO(
     "mysql:host=" . DB_HOST . ";dbname=" . DB_USERNAME,
     DB_USERNAME,
     DB_PASSWORD
-);
+);*/
 
 // TODO: Redirect back after failed login
 if (!empty($username) && !empty($password)) {
@@ -42,7 +42,10 @@ if (!empty($username) && !empty($password)) {
     } else {
         echo "Passwords do not match";
     }
+    
 }
+
+echo " <a href=\"register.php\">go back</a>";
 
 function is_password_valid(string $password): bool
 {
