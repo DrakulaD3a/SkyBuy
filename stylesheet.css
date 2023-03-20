@@ -1,187 +1,187 @@
 html,
 body {
-	margin: 0;
-	min-height: 100vh;
-	background-color: var(--color-black);
-	color: white;
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--color-black);
+  color: white;
 }
 
 /* hide arrows in number input */
 input[type="number"] {
-	-moz-appearance: textfield;
-	appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 input {
-	border-radius: 0.5rem;
-	background-color: whitesmoke;
-	border: none;
-	color: black;
-	height: 1.5rem;
+  border-radius: 0.5rem;
+  background-color: whitesmoke;
+  border: none;
+  color: black;
+  height: 1.5rem;
 }
 
 button {
-	border: none;
-	background-color: transparent;
-	cursor: pointer;
-	border-radius: 0.5rem;
-	color: white;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  color: white;
 }
 
 :root {
-	--color-black: #00040d;
-	--color-dark-blue: #3850ba;
-	--color-light-blue: #adddf5;
-	--color-white: #ffffff;
+  --color-black: #00040d;
+  --color-dark-blue: #3850ba;
+  --color-light-blue: #adddf5;
+  --color-white: #ffffff;
 }
 
 /* ============================================================= */
 
 #main-body {
-	display: grid;
-	grid: 4rem auto 2rem / 15rem auto;
+  display: grid;
+  grid: 4rem auto 2rem / 15rem auto;
 }
 
 #header {
-	grid-area: 1 / 1 / span 1 / span 2;
+  grid-area: 1 / 1 / span 1 / span 2;
 }
 
 #side-bar {
-	grid-area: 2 / 1;
+  grid-area: 2 / 1;
 }
 
 #main {
-	grid-area: 2 / 2;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
+  grid-area: 2 / 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 #footer {
-	grid-area: 3 / 1 / span 1 / span 2;
+  grid-area: 3 / 1 / span 1 / span 2;
 }
 
 #profile {
-	display: inline-block;
+  display: inline-block;
 }
 
 #profile-content {
-	display: none;
-	position: absolute;
-	z-index: 1;
-	background-color: var(--color-light-blue);
+  display: none;
+  position: absolute;
+  z-index: 1;
+  background-color: var(--color-light-blue);
 }
 
 #profile-content a {
-	display: block;
+  display: block;
 }
 
 #profile-content a:hover {
-	background-color: var(--color-dark-blue);
+  background-color: var(--color-dark-blue);
 }
 
 #profile:hover #profile-content {
-	display: block;
+  display: block;
 }
 
 /* ============================================================= */
 
 .bg-black {
-	background-color: var(--color-black);
+  background-color: var(--color-black);
 }
 
 .bg-dark-blue {
-	background-color: var(--color-dark-blue);
+  background-color: var(--color-dark-blue);
 }
 
 .bg-light-blue {
-	background-color: var(--color-light-blue);
+  background-color: var(--color-light-blue);
 }
 
 .bg-white {
-	background-color: var(--color-white);
+  background-color: var(--color-white);
 }
 
 .flex {
-	display: flex;
+  display: flex;
 }
 
 .space-between {
-	justify-content: space-between;
+  justify-content: space-between;
 }
 
 .align-items {
-	align-items: center;
+  align-items: center;
 }
 
 .align-items-start {
-	align-items: flex-start;
+  align-items: flex-start;
 }
 
 .round-border {
-	border-radius: 0.5rem;
+  border-radius: 0.5rem;
 }
 
 .round-border-bottom {
-	border-bottom-left-radius: 0.5rem;
-	border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
 }
 
 .width-2 {
-	width: 2rem;
+  width: 2rem;
 }
 
 .no-text-decoration {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 .direction-column {
-	flex-direction: column;
+  flex-direction: column;
 }
 
 .height-3 {
-	height: 3rem;
+  height: 3rem;
 }
 
 .height-min-content {
-	height: min-content;
+  height: min-content;
 }
 
 .padding-1 {
-	padding: 1rem;
+  padding: 1rem;
 }
 
 .padding-0-1 {
-	padding: 0 1rem;
+  padding: 0 1rem;
 }
 
 .padding-0-2 {
-	padding: 0 2rem;
+  padding: 0 2rem;
 }
 
 .gray-border-right {
-	border-right: 1px solid var(--color-light-blue);
+  border-right: 1px solid var(--color-light-blue);
 }
 
 .gray-border-top {
-	border-top: 1px solid var(--color-light-blue);
+  border-top: 1px solid var(--color-light-blue);
 }
 
 .margin-2 {
-	margin: 2rem;
+  margin: 2rem;
 }
 
 .black {
-	color: black;
+  color: black;
 }
 
 .white {
-	color: white;
+  color: white;
 }
 
 .color-inherit {
-	color: inherit;
+  color: inherit;
 }
 
 .gap-half {
-	gap: 0.5rem;
+  gap: 0.5rem;
 }

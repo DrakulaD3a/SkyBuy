@@ -20,22 +20,22 @@ if (isset($_POST["search"])) {
 <!DOCTYPE html>
 <!-- TODO: CSS, a lot -->
 <html lang="cs">
-	<head>
-		<meta charset="UTF-8"/>
-		<title>Bazoš</title>
-		<link rel="stylesheet" type="text/css" href="stylesheet.css" />
-	</head>
-	<body id="main-body">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Bazoš</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+  </head>
+  <body id="main-body">
 
-		<div id="header" class="flex space-between align-items-start padding-0-2" >
-			<p>Logo</p>
+    <div id="header" class="flex space-between align-items-start padding-0-2" >
+      <p>Logo</p>
 
-			<form method="post" class="flex align-items space-between round-border-bottom bg-dark-blue gap-half padding-0-1 height-3" >
-				<label for="search">Vyhledat:</label>
-				<input type="text" name="search" class="search" />
-				<label for="min">Cena od:</label>
-				<input type="number" name="min" class="width-2" />
-				<label for="max">do:</label>
+      <form method="post" class="flex align-items space-between round-border-bottom bg-dark-blue gap-half padding-0-1 height-3" >
+        <label for="search">Vyhledat:</label>
+        <input type="text" name="search" class="search" />
+        <label for="min">Cena od:</label>
+        <input type="number" name="min" class="width-2" />
+        <label for="max">do:</label>
 				<input type="number" name="max" class="width-2" />
 				<button type="submit">Vyhledat</button>
 			</form>

@@ -1,7 +1,7 @@
 <?php
 
 if (empty($_POST)) {
-	header("Location: register.php");
+    header("Location: register.php");
 }
 
 session_start();
