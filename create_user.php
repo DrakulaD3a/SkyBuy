@@ -44,8 +44,7 @@ if (!empty($username) && !empty($password)) {
     }
 }
 
-function is_password_valid(string $password): bool
-{
+function is_password_valid(string $password): bool {
     $password_len = strlen($password);
     if ($password_len < 8) {
         return false;
@@ -71,8 +70,7 @@ function is_password_valid(string $password): bool
     return false;
 }
 
-function is_username_available(string $username, $db): bool
-{
+function is_username_available(string $username, $db): bool {
     $query = $db->prepare("SELECT * FROM users WHERE username = ?;");
     $query->execute([$username]);
     return $query->rowCount() == 0;

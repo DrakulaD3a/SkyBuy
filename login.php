@@ -17,7 +17,7 @@ if (!empty($_SESSION["username"])) {
 
     <form method="post" action="signup.php" class="main-form flex direction-column align-items justify-content gap-half bg-light-blue" >
 
-      <label for="username" class="padding-top" >Uživatelské jméno</label>
+      <label for="username" class="padding-top-5" >Uživatelské jméno</label>
       <input name="username" id="username" required />
 
       <label for="password" >Heslo</label>
