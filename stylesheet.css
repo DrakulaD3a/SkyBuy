@@ -85,10 +85,6 @@ button {
 
 /* ============================================================= */
 
-.bg-black {
-  background-color: var(--color-black);
-}
-
 .bg-dark-blue {
   background-color: var(--color-dark-blue);
 }

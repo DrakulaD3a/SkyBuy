@@ -41,7 +41,7 @@ if (isset($_POST["search"])) {
       </form>
 
       <div id="profile">
-        <span class="flex justify-content align-items bg-dark-blue round-border-bottom no-text-decoration white padding-0-1 height-3" >
+        <span class="flex justify-content align-items bg-dark-blue round-border-bottom no-text-decoration white padding-0-2 height-3" >
           Profil
         </span>
         <div id="profile-content" >
@@ -53,14 +53,14 @@ if (isset($_POST["search"])) {
 
     <main id="main" class="bg-white black" >
 
-    <!-- FIXME: Remove this part, just for testing -->
-    <a href="product.php" class="flex align-items-start direction-column no-text-decoration height-min-content padding-1 color-inherit gray-border-right gap-half">
-      <img src="https://www.bhphotovideo.com/images/images2500x2500/asus_x55a_ds91_15_6_notebook_computer_924693.jpg" alt="poster" width="100%" />
-      <h3>Inzeráty</h3>
-      <p>
-        Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupclassatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.
-      </p>
-    </a>
+      <!-- FIXME: Remove this part, just for testing -->
+      <a href="product.php" class="flex align-items-start direction-column no-text-decoration height-min-content padding-1 color-inherit gray-border-right gap-half">
+        <img src="https://www.bhphotovideo.com/images/images2500x2500/asus_x55a_ds91_15_6_notebook_computer_924693.jpg" alt="poster" width="100%" />
+        <h3>Inzeráty</h3>
+        <p>
+          Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupclassatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.
+        </p>
+      </a>
 
 <?php
 /* $index = 0;
