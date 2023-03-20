@@ -18,18 +18,18 @@ if (empty($_SESSION["user"])) {
 		<main class="padding-1" >
 			<form method="post" action="add-poster.php" class="flex direction-column align-items justify-content gap-half" >
 				<label for="title">Nadpis:</label>
-				<input type="text" name="title" id="title">
+				<input type="text" name="title" id="title" required>
 
 				<label for="description">Popis:</label>
-				<textarea name="description" id="description" maxlength="3000"></textarea>
+				<textarea name="description" id="description" maxlength="3000" required></textarea>
 
 				<label for="category">Kategorie:</label>
-				<select name="category" id="category">
+				<select name="category" id="category" required>
 					<option value="1">Kategorie 1</option>
 				</select>
 
 				<label for="price">Cena:</label>
-				<input type="text" name="price" id="price">
+				<input type="number" name="price" id="price" required>
 
 				<label for="image">Obrázek:</label>
 				<input type="file" name="image" id="image" accept=".png,.jpg,.jpeg">

@@ -1,8 +1,8 @@
 <?php
 
-ini_set("display_errors", 1);
-ini_set("display_startup_errors", 1);
-error_reporting(E_ALL);
+if (empty($_POST)) {
+	header("Location: register.php");
+}
 
 session_start();
 
@@ -31,7 +31,7 @@ if (!empty($username) && !empty($password)) {
                 );
                 $stmt->execute([$username, md5($password)]);
 
-                $_SESSION["user"] = $username;
+                $_SESSION["username"] = $username;
                 header("Location: index.php");
             } else {
                 echo "Username already exists";

@@ -1,9 +1,5 @@
 <?php
 
-ini_set("display_errors", 1);
-ini_set("display_startup_errors", 1);
-error_reporting(E_ALL);
-
 require_once "config.php";
 
 session_start();
@@ -31,11 +27,11 @@ function login(string $username, string $password, $db): bool
 }
 
 if (isset($_POST["username"]) && isset($_POST["password"])) {
-    $user = strtolower($_POST["username"]);
+    $username = strtolower($_POST["username"]);
     $password = $_POST["password"];
 
-    if (login($user, $password, $db)) {
-        $_SESSION["user"] = $user;
+    if (login($username, $password, $db)) {
+        $_SESSION["username"] = $username;
         header("Location: index.php");
     } else {
         die();
