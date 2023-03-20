@@ -74,7 +74,6 @@ foreach ($objects as $object) {
   }
 
   // Hopefully this works
-  // TODO: Create the product page
 
   echo "<a href='product.php?id={$object['id']}' class='flex align-items-start direction-column no-text-decoration height-min-content padding-1 color-inherit gap-half {$class}'>";
   echo "<img src='data:image/png;base64,$object['image']' alt='poster' width="100%" />";
