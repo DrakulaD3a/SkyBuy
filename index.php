@@ -36,74 +36,74 @@ if (isset($_POST["search"])) {
         <label for="min">Cena od:</label>
         <input type="number" name="min" class="width-2" />
         <label for="max">do:</label>
-				<input type="number" name="max" class="width-2" />
-				<button type="submit">Vyhledat</button>
-			</form>
+        <input type="number" name="max" class="width-2" />
+        <button type="submit">Vyhledat</button>
+      </form>
 
-			<div id="profile">
-				<span class="flex justify-content align-items bg-dark-blue round-border-bottom no-text-decoration white padding-0-1 height-3" >
-					Profil
-				</span>
-				<div id="profile-content" >
-					<a href="logout.php">Odhlásit</a>
-					<a href="add.php">Přidat Inzerát</a>
-				</div>
-			</div>
-		</div>
+      <div id="profile">
+        <span class="flex justify-content align-items bg-dark-blue round-border-bottom no-text-decoration white padding-0-1 height-3" >
+          Profil
+        </span>
+        <div id="profile-content" >
+          <a href="logout.php">Odhlásit</a>
+          <a href="add.php">Přidat Inzerát</a>
+        </div>
+      </div>
+    </div>
 
-		<main id="main" class="bg-white black" >
+    <main id="main" class="bg-white black" >
 
-			<!-- FIXME: Remove this part, just for testing -->
-			<a href="product.php" class="flex align-items-start direction-column no-text-decoration height-min-content padding-1 color-inherit gray-border-right gap-half">
-				<img src="https://www.bhphotovideo.com/images/images2500x2500/asus_x55a_ds91_15_6_notebook_computer_924693.jpg" alt="poster" width="100%" />
-				<h3>Inzeráty</h3>
-				<p>
-					Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupclassatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.
-				</p>
-			</a>
+    <!-- FIXME: Remove this part, just for testing -->
+    <a href="product.php" class="flex align-items-start direction-column no-text-decoration height-min-content padding-1 color-inherit gray-border-right gap-half">
+      <img src="https://www.bhphotovideo.com/images/images2500x2500/asus_x55a_ds91_15_6_notebook_computer_924693.jpg" alt="poster" width="100%" />
+      <h3>Inzeráty</h3>
+      <p>
+        Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupclassatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.
+      </p>
+    </a>
 
 <?php
 /* $index = 0;
 foreach ($objects as $object) {
-	$class = '';
-	if ($index >= 3) {
-		$class = 'gray-border-top ';
-	}
-	if ($index % 3 != 2) {
-				$class = $class . 'gray-border-right';
-	}
+  $class = '';
+  if ($index >= 3) {
+    $class = 'gray-border-top ';
+  }
+  if ($index % 3 != 2) {
+        $class = $class . 'gray-border-right';
+  }
 
-	// Hopefully this works
-	// TODO: Create the product page
+  // Hopefully this works
+  // TODO: Create the product page
 
-	echo "<a href='product.php?id={$object['id']}' class='flex align-items-start direction-column no-text-decoration height-min-content padding-1 color-inherit gap-half {$class}'>";
-	echo "<img src='data:image/png;base64,$object['image']' alt='poster' width="100%" />";
-	echo '<h3>Inzeráty</h3>';
-	echo '<p>Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupclassatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.</p>';
-	echo '</a>';
+  echo "<a href='product.php?id={$object['id']}' class='flex align-items-start direction-column no-text-decoration height-min-content padding-1 color-inherit gap-half {$class}'>";
+  echo "<img src='data:image/png;base64,$object['image']' alt='poster' width="100%" />";
+  echo '<h3>Inzeráty</h3>';
+  echo '<p>Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupclassatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.</p>';
+  echo '</a>';
 } */
 ?>
-		</main>
+    </main>
 
-		<div id="side-bar" class="flex align-items bg-dark-blue round-border direction-column height-min-content margin-2 padding-1" >
-			<h3>Kategorie:</h3>
+        <div id="side-bar" class="flex align-items bg-dark-blue round-border direction-column height-min-content margin-2 padding-1" >
+        <h3>Kategorie:</h3>
 <?php
 // TODO: Get from db
 
 /* $categories = $db->query("SELECT * FROM categories")->fetchAll();
 foreach ($categories as $category) {
-	// HACK: I can't think of any other way to do this
+  // HACK: I can't think of any other way to do this
 
-	echo "<a href='index.php?category=$category' >$category</a>";
+  echo "<a href='index.php?category=$category' >$category</a>";
 } */
 ?>
-		</div>
+    </div>
 
-		<footer id="footer" class="flex align-items space-between bg-light-blue padding-1" >
-			<!-- TODO -->
-			<p>footer</p>
-			<p>footer</p>
-		</footer>
+    <footer id="footer" class="flex align-items space-between bg-light-blue padding-1" >
+      <!-- TODO -->
+      <p>footer</p>
+      <p>footer</p>
+    </footer>
 
-	</body>
+  </body>
 </html>
