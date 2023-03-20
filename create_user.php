@@ -15,11 +15,11 @@ require_once "config.php";
 ] = $_POST;
 $username = strtolower($username);
 
-/*$db = new PDO(
+$db = new PDO(
     "mysql:host=" . DB_HOST . ";dbname=" . DB_USERNAME,
     DB_USERNAME,
     DB_PASSWORD
-);*/
+);
 
 // TODO: Redirect back after failed login
 if (!empty($username) && !empty($password)) {
