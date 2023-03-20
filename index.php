@@ -54,7 +54,7 @@ if (isset($_POST["search"])) {
     <main id="main" class="bg-white black" >
 
       <!-- FIXME: Remove this part, just for testing -->
-      <a href="product.php" class="flex align-items-start direction-column no-text-decoration height-min-content padding-1 color-inherit gray-border-right gap-half">
+      <a href="product.php" class="flex align-items-start direction-column no-text-decoration height-min-content padding-1 color-inherit border-right gap-half">
         <img src="https://www.bhphotovideo.com/images/images2500x2500/asus_x55a_ds91_15_6_notebook_computer_924693.jpg" alt="poster" width="100%" />
         <h3>Inzeráty</h3>
         <p>
@@ -67,10 +67,10 @@ if (isset($_POST["search"])) {
 foreach ($objects as $object) {
   $class = '';
   if ($index >= 3) {
-    $class = 'gray-border-top ';
+    $class = 'border-top ';
   }
   if ($index % 3 != 2) {
-        $class = $class . 'gray-border-right';
+        $class = $class . 'border-right';
   }
 
   // Hopefully this works

@@ -13,22 +13,20 @@ if (!empty($_SESSION["username"])) {
     <title>Bazoš - přihlášení</title>
     <link rel="stylesheet" type="text/css" href="stylesheet.css" />
   </head>
-  <body>
+  <body class="form-body" >
 
-    <main class="padding-1" >
-      <form method="post" action="signup.php" class="flex direction-column align-items justify-content gap-half" >
+    <form method="post" action="signup.php" class="main-form flex direction-column align-items justify-content gap-half bg-light-blue" >
 
-        <label for="username" >Uživatelské jméno</label>
-        <input name="username" id="username" required />
+      <label for="username" class="padding-top" >Uživatelské jméno</label>
+      <input name="username" id="username" required />
 
-        <label for="password" >Heslo</label>
-        <input type="password" name="password" id="password" required />
+      <label for="password" >Heslo</label>
+      <input type="password" name="password" id="password" required />
 
-        <button type="submit" id="submit" >Přihlásit se</button>
-        <p>Ještě nemáte účet? <a href="register.php" >Vytvořte si ho</a></p>
+      <button type="submit" id="submit" >Přihlásit se</button>
+      <p>Ještě nemáte účet? <a href="register.php" >Vytvořte si ho</a></p>
 
-      </form>
-    </main>
+    </form>
 
   </body>
 </html>
