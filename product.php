@@ -1,6 +1,12 @@
 <?php
 
-// FIXME: Check if id is valid
+require_once "config.php";
+
+if (!isset($_GET['id'])) {
+    // TODO: redirect to 404 page
+    echo "Post not found";
+    exit;
+}
 $id = $_GET['id'];
 
 $db = new PDO(
@@ -12,7 +18,23 @@ $db = new PDO(
 $query = $db->prepare("SELECT * FROM `posts` WHERE `id` = ?");
 $query->execute([$id]);
 
-if (empty($query)) {
+if ($query->rowCount() == 0) {
+    // TODO: redirect to 404 page
     echo "Post not found";
     exit;
 }
+
+$post = $query->fetch();
+
+?>
+
+<!DOCTYPE html>
+<html lang="cz">
+  <head>
+    <meta charset="UTF-8">
+    <title>Bazoš</title>
+  </head>
+  <body>
+    <h1><?= $post['title'] ?></h1>
+  </body>
+</html>
