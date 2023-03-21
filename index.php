@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+//SELECT * FROM posts INNER JOIN categories ON posts.category_id=categories.id WHERE categories.name = "" ORDER BY price;
+
 if (empty($_SESSION["username"])) {
     header("Location: login.php");
 }
@@ -64,6 +66,9 @@ if (isset($_POST["search"])) {
 
 <?php
 /* $index = 0;
+
+  
+
 foreach ($objects as $object) {
   $class = '';
   if ($index >= 3) {
