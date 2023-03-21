@@ -34,6 +34,6 @@ function is_username_available(string $username, $db): bool {
 
 function login(string $username, string $password, $db): bool {
     $query = $db->prepare("SELECT * FROM users WHERE username = ? and password = ?");
-    $query->execute([$username, $password]);
+    $query->execute([$username, md5($password)]);
     return $query->rowCount() == 1;
 }
