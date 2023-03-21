@@ -1,3 +1,4 @@
+/* TODO: Typeface */
 html,
 body {
   margin: 0;
@@ -83,11 +84,16 @@ button {
   display: block;
 }
 
-/* ============================================================= */
-
-.bg-black {
-  background-color: var(--color-black);
+.form-body {
+  display: grid;
+  grid-template-columns: auto 50rem auto;
 }
+
+.main-form {
+  grid-area: 1 / 2;
+}
+
+/* ============================================================= */
 
 .bg-dark-blue {
   background-color: var(--color-dark-blue);
@@ -158,11 +164,15 @@ button {
   padding: 0 2rem;
 }
 
-.gray-border-right {
+.padding-top-5 {
+  padding-top: 5rem;
+}
+
+.border-right {
   border-right: 1px solid var(--color-light-blue);
 }
 
-.gray-border-top {
+.border-top {
   border-top: 1px solid var(--color-light-blue);
 }
 

@@ -1,10 +1,8 @@
 <?php
 
-if (empty($_POST)) {
+if (!isset($_POST)) {
     header("Location: add.php");
 }
-
-// TODO: Prepare the data and send it to db
 
 [
     "title" => $title,
@@ -13,6 +11,9 @@ if (empty($_POST)) {
     "price" => $price,
 ] = $_POST;
 
-if (!empty($_POST["image"])) {
+// Image isn't required so check if exists
+if (isset($_POST["image"])) {
     $image = $_POST["image"];
 }
+
+// TODO: Send to db
