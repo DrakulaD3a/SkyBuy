@@ -4,6 +4,30 @@ session_start();
 if (!empty($_SESSION["username"])) {
     header("Location: index.php");
 }
+
+require_once "config.php";
+require_once "validation.php";
+
+
+if (isset($_POST)) {
+    $db = new PDO(
+        "mysql:host=" . DB_HOST . ";dbname=" . DB_USERNAME,
+        DB_USERNAME,
+        DB_PASSWORD
+    );
+
+    if (isset($_POST["username"]) && isset($_POST["password"])) {
+        $username = strtolower($_POST["username"]);
+        $password = $_POST["password"];
+
+        if (login($username, $password, $db)) {
+            $_SESSION["username"] = $username;
+            header("Location: index.php");
+        } else {
+            echo "Invalid username or password";
+        }
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +39,7 @@ if (!empty($_SESSION["username"])) {
   </head>
   <body class="form-body" >
 
-    <form method="post" action="signup.php" class="main-form flex direction-column align-items justify-content gap-half bg-light-blue" >
+    <form method="post" class="main-form flex direction-column align-items justify-content gap-half bg-light-blue" >
 
       <label for="username" class="padding-top-5" >Uživatelské jméno</label>
       <input name="username" id="username" required />
