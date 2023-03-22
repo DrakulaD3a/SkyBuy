@@ -86,7 +86,7 @@ foreach ($objects as $object) {
         $class = $class . 'border-right';
   }
 
-  // Hopefully this works
+  // FIXME: Find a better way to do it, echo bad
 
   echo "<a href='product.php?id={$object['id']}' class='flex align-items-start direction-column no-text-decoration height-min-content padding-1 color-inherit gap-half {$class}'>";
   echo "<img src='data:image/png;base64,$object['image']' alt='poster' width="100%" />";

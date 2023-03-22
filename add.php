@@ -28,14 +28,12 @@ if (isset($_POST["title"])) {
 
     $user_id = $db->query("SELECT id FROM users WHERE username = '" . $_SESSION["username"] . "'")->fetch()["id"];
 
-    // FIXME: tmp_name doesn't get created
-    var_dump($_FILES["image"]);
-    // $image_raw = file_get_contents($_FILES["image"]["tmp_name"]);
+    $image_raw = file_get_contents($_FILES["image"]["tmp_name"]);
 
-    /* $stmt = $db->prepare(
+    $stmt = $db->prepare(
         "INSERT INTO `posts` (user_id, category_id, pic, title, description, price, date) VALUES (?, ?, ?, ?, ?, ?, ?);"
     );
-    $stmt->execute([$user_id, $category_id, base64_encode($image_raw), $title, $description, $price, date("Y-m-d H:i:s")]); */
+    $stmt->execute([$user_id, $category_id, base64_encode($image_raw), $title, $description, $price, date("Y-m-d H:i:s")]);
 }
 
 ?>
@@ -70,7 +68,7 @@ foreach ($categories as $category) {
       <input type="number" name="price" id="price" required>
 
       <label for="image">Obrázek:</label>
-      <input type="file" name="image" id="image" accept=".png" required>
+      <input type="file" name="image" id="image" accept="image/*" required>
 
       <button type="submit">Přidat</button>
     </form>
