@@ -93,6 +93,10 @@ button {
   grid-area: 1 / 2;
 }
 
+.category:hover {
+  text-decoration: underline;
+}
+
 /* ============================================================= */
 
 .bg-dark-blue {

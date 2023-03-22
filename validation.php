@@ -27,7 +27,7 @@ function is_password_valid(string $password): bool {
 }
 
 function is_username_available(string $username, $db): bool {
-    $query = $db->prepare("SELECT * FROM users WHERE username = ?;");
+    $query = $db->prepare("SELECT * FROM users WHERE username = ?");
     $query->execute([$username]);
     return $query->rowCount() == 0;
 }
