@@ -28,6 +28,7 @@ $post = $query->fetch();
 
 ?>
 
+<!-- TODO: Create this page -->
 <!DOCTYPE html>
 <html lang="cz">
   <head>
@@ -37,7 +38,6 @@ $post = $query->fetch();
   <body>
     <h1><?= $post['title'] ?></h1>
     <p><?= $post['description'] ?></p>
-    <!-- I have an image encoded in base64 in $post['pic'], show it -->
     <img src="data:image/png;base64,<?= $post['pic'] ?>" />
   </body>
 </html>

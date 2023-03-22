@@ -24,16 +24,18 @@ if (isset($_POST["title"])) {
         "description" => $description,
         "category" => $category_id,
         "price" => $price,
-        "image" => $image,
     ] = $_POST;
 
     $user_id = $db->query("SELECT id FROM users WHERE username = '" . $_SESSION["username"] . "'")->fetch()["id"];
-    echo $user_id;
 
-    $stmt = $db->prepare(
+    // FIXME: tmp_name doesn't get created
+    var_dump($_FILES["image"]);
+    // $image_raw = file_get_contents($_FILES["image"]["tmp_name"]);
+
+    /* $stmt = $db->prepare(
         "INSERT INTO `posts` (user_id, category_id, pic, title, description, price, date) VALUES (?, ?, ?, ?, ?, ?, ?);"
     );
-    $stmt->execute([$user_id, $category_id, base64_encode($image), $title, $description, $price, date("Y-m-d H:i:s")]);
+    $stmt->execute([$user_id, $category_id, base64_encode($image_raw), $title, $description, $price, date("Y-m-d H:i:s")]); */
 }
 
 ?>
@@ -47,7 +49,7 @@ if (isset($_POST["title"])) {
   </head>
   <body class="form-body" >
 
-    <form method="post" class="main-form flex direction-column align-items justify-content gap-half bg-light-blue" >
+    <form method="post" enctype="multipart/form-data" class="main-form flex direction-column align-items justify-content gap-half bg-light-blue" >
       <label for="title" class="padding-top-5">Nadpis:</label>
       <input type="text" name="title" id="title" required>
 
