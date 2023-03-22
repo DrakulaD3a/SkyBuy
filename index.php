@@ -106,9 +106,7 @@ $categories = $db->query("SELECT * FROM categories")->fetchAll();
 foreach ($categories as $category) {
   // HACK: I can't think of any other way to do this
 
-  $category_id = $category['id'];
-  $category_name = $category['name'];
-  echo "<a href='index.php?category=$category_id' >$category_name</a>";
+  echo "<a href='index.php?category=" . $category["id"] ."' >" . $category["name"] . "</a>";
 }
 ?>
     </div>

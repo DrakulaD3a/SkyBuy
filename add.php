@@ -58,8 +58,12 @@ if (isset($_POST["title"])) {
 
       <label for="category">Kategorie:</label>
       <select name="category" id="category" required>
-        <!-- TODO: Get categories from db -->
-        <option value="1">Kategorie 1</option>
+<?php
+$categories = $db->query("SELECT * FROM categories")->fetchAll();
+foreach ($categories as $category) {
+    echo "<option value='" . $category["id"] . "'>" . $category["name"] . "</option>";
+}
+?>
       </select>
 
       <label for="price">Cena:</label>
