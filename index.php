@@ -68,21 +68,22 @@ if (isset($_POST["search"])) {
 $index = 0;
 
 foreach ($objects as $object) {
-  $class = '';
+  $class = "";
   if ($index >= 3) {
-    $class = 'border-top ';
+    $class = "border-top ";
   }
   if ($index % 3 != 2) {
-        $class = $class . 'border-right';
+        $class = $class . "border-right";
   }
+  $index++;
 
-  // FIXME: Find a better way to do it, echo bad
-
-  echo "<a href='product.php?id={$object['id']}' class='flex align-items-start direction-column no-text-decoration height-min-content padding-1 color-inherit gap-half {$class}'>";
-  echo "<img src='data:image/png;base64," . $object['pic'] . "' width='100%' />";
-  echo '<h3>Inzeráty</h3>';
-  echo '<p>' . $object['description'] . '</p>';
-  echo '</a>';
+  ?>
+  <a href="product.php?id=<?= $object["id"] ?>" class="flex align-items-start direction-column no-text-decoration padding-1 color-inherit gap-half height-100 <?= $class ?>">
+    <img src="data:image/png;base64,<?= $object["pic"] ?>" width="100%" />
+    <h3><?= $object["title"] ?></h3>
+    <p><?= $object["description"] ?></p>
+  </a>
+  <?php
 }
 ?>
     </main>
