@@ -34,6 +34,8 @@ if (isset($_POST["title"])) {
         "INSERT INTO `posts` (user_id, category_id, pic, title, description, price, date) VALUES (?, ?, ?, ?, ?, ?, ?);"
     );
     $stmt->execute([$user_id, $category_id, base64_encode($image_raw), $title, $description, $price, date("Y-m-d H:i:s")]);
+
+    header("Location: index.php");
 }
 
 ?>
