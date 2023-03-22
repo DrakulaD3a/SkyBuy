@@ -1,9 +1,5 @@
 <?php
 
-// Making bigger max upload size
-ini_set('post_max_size', '64M');
-ini_set('upload_max_filesize', '64M');
-
 session_start();
 
 if (empty($_SESSION["username"])) {
@@ -29,6 +25,10 @@ if (isset($_POST["title"])) {
     $user_id = $db->query("SELECT id FROM users WHERE username = '" . $_SESSION["username"] . "'")->fetch()["id"];
 
     $image_raw = file_get_contents($_FILES["image"]["tmp_name"]);
+    if (!empty($_FILES["image"]["error"])) {
+        // TODO: Make it pretty
+        echo "Image too big";
+    }
 
     $stmt = $db->prepare(
         "INSERT INTO `posts` (user_id, category_id, pic, title, description, price, date) VALUES (?, ?, ?, ?, ?, ?, ?);"
