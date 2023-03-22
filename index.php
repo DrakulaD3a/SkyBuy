@@ -100,14 +100,16 @@ foreach ($objects as $object) {
         <div id="side-bar" class="flex align-items bg-dark-blue round-border direction-column height-min-content margin-2 padding-1" >
         <h3>Kategorie:</h3>
 <?php
-// TODO: Get from db
+$categories = $db->query("SELECT * FROM categories ORDER BY id")->fetchAll();
 
-/* $categories = $db->query("SELECT * FROM categories")->fetchAll();
+$categories = $db->query("SELECT * FROM categories")->fetchAll();
 foreach ($categories as $category) {
   // HACK: I can't think of any other way to do this
 
-  echo "<a href='index.php?category=$category' >$category</a>";
-} */
+  $category_id = $category['id'];
+  $category_name = $category['name'];
+  echo "<a href='index.php?category=$category_id' >$category_name</a>";
+}
 ?>
     </div>
 
