@@ -55,7 +55,7 @@ if (isset($_POST)) {
   </head>
   <body class="form-body" >
 
-    <form method="post" class="main-form flex direction-column align-items justify-content gap-half" >
+    <form method="post" class="main-form flex direction-column align-items justify-content gap-half bg-light-blue" >
 
       <label for="username" class="padding-top-5" >Uživatelské jméno</label>
       <input name="username" id="username" required />

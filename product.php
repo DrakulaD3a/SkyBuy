@@ -34,6 +34,7 @@ $post = $query->fetch();
   <head>
     <meta charset="UTF-8">
     <title>Bazoš</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
   </head>
   <body>
     <h1><?= $post['title'] ?></h1>
