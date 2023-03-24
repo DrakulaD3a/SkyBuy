@@ -19,11 +19,7 @@ $objects = $db->query("SELECT * FROM posts")->fetchAll();
 
 if (isset($_POST["search"])) {
     if (isset($_POST["min"]) && isset($_POST["max"])) {
-        // TODO: Get an array of all objects in the db
-        // $objects
         if (isset($_GET["category"])) {
-            // Query for a specific category
-            // FIXME: Check if category exists
         }
     }
 }

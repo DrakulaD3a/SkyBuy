@@ -15,27 +15,29 @@ $db = new PDO(
 );
 
 if (isset($_POST["title"])) {
-    [
-        "title" => $title,
-        "description" => $description,
-        "category" => $category_id,
-        "price" => $price,
-    ] = $_POST;
+    if (empty($_FILES["image"]["error"])) {
+        [
+            "title" => $title,
+            "description" => $description,
+            "category" => $category_id,
+            "price" => $price,
+        ] = $_POST;
 
-    $user_id = $db->query("SELECT id FROM users WHERE username = '" . $_SESSION["username"] . "'")->fetch()["id"];
+        $user_id = $db->query("SELECT id FROM users WHERE username = '" . $_SESSION["username"] . "'")->fetch()["id"];
 
-    $image_raw = file_get_contents($_FILES["image"]["tmp_name"]);
-    if (!empty($_FILES["image"]["error"])) {
-        // TODO: Make it pretty
-        echo "Image too big";
+        $image_raw = file_get_contents($_FILES["image"]["tmp_name"]);
+        if (!empty($_FILES["image"]["error"])) {
+            // TODO: Make it pretty
+            echo "Image too big";
+        }
+
+        $stmt = $db->prepare(
+            "INSERT INTO `posts` (user_id, category_id, pic, title, description, price, date) VALUES (?, ?, ?, ?, ?, ?, ?);"
+        );
+        $stmt->execute([$user_id, $category_id, base64_encode($image_raw), $title, $description, $price, date("Y-m-d H:i:s")]);
+
+        header("Location: index.php");
     }
-
-    $stmt = $db->prepare(
-        "INSERT INTO `posts` (user_id, category_id, pic, title, description, price, date) VALUES (?, ?, ?, ?, ?, ?, ?);"
-    );
-    $stmt->execute([$user_id, $category_id, base64_encode($image_raw), $title, $description, $price, date("Y-m-d H:i:s")]);
-
-    header("Location: index.php");
 }
 
 ?>
