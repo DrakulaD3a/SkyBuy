@@ -61,6 +61,10 @@ a {
   padding: 0 1rem;
 }
 
+#min, #max {
+  width: 2rem;
+}
+
 #side-bar {
   grid-area: 2 / 1;
   border-radius: 0.5rem;
@@ -191,10 +195,6 @@ a {
   align-items: flex-start;
 }
 
-.width-2 {
-  width: 2rem;
-}
-
 .no-text-decoration {
   text-decoration: none;
 }
@@ -227,10 +227,26 @@ a {
   gap: 0.5rem;
 }
 
+.visible {
+  visibility: visible;
+}
+
+.hidden {
+  display: none;
+}
+
 /* ============================================================= */
 
 /* Login, register, add */
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
+  html {
+    font-size: 10px;
+  }
+
+  input {
+    width: 3rem;
+  }
+
   .form-body {
     grid-template-columns: 100%;
   }
@@ -238,11 +254,7 @@ a {
   .main-form {
     grid-area: 1 / 1;
   }
-}
 
-/* index */
-/* TODO: Add some way to filter */
-@media (max-width: 1000px) {
   #main-body {
     grid: 4rem auto 2rem / auto;
   }
@@ -251,8 +263,12 @@ a {
     grid-area: 1 / 1;
   }
 
-  #side-bar {
+  .visible {
     visibility: hidden;
+  }
+  
+  .hidden {
+    display: initial;
   }
 
   #main {
@@ -262,5 +278,6 @@ a {
   #footer {
     grid-area: 3 / 1;
   }
+
 }
 

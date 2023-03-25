@@ -25,6 +25,10 @@ if (isset($_POST["search"])) {
         }
     }
 }
+
+$categories = $db->query("SELECT * FROM categories ORDER BY id")->fetchAll();
+
+$categories = $db->query("SELECT * FROM categories")->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -34,25 +38,27 @@ if (isset($_POST["search"])) {
     <meta charset="UTF-8"/>
     <title>Bazoš</title>
     <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Online bazar pro každého">
   </head>
   <body id="main-body">
 
     <div id="header" class="flex space-between align-items-start padding-0-2" >
       <p>Logo</p>
 
-      <div id="filter" class="flex align-items space-between bg-dark-blue gap-half" >
+      <div id="filter" class="flex space-between align-items bg-dark-blue gap-half visible" >
         <form method="post">
           <label for="search">Vyhledat:</label>
           <input type="text" name="search" class="search" />
           <label for="min">Cena od:</label>
-          <input type="number" name="min" class="width-2" />
+          <input type="number" name="min" id="min" />
           <label for="max">do:</label>
-          <input type="number" name="max" class="width-2" />
+          <input type="number" name="max" id="max" />
           <button type="submit">Vyhledat</button>
         </form>
       </div>
 
-      <div id="profile" class="bg-dark-blue">
+      <div id="profile" class="bg-dark-blue visible">
         <span class="flex justify-content align-items padding-0-2 height-full" >
           Profil
         </span>
@@ -88,12 +94,9 @@ foreach ($objects as $object) {
 ?>
     </main>
 
-        <div id="side-bar" class="flex align-items bg-dark-blue flex-column padding-1" >
+        <div id="side-bar" class="visible flex align-items bg-dark-blue flex-column padding-1" >
           <h3>Kategorie:</h3>
 <?php
-$categories = $db->query("SELECT * FROM categories ORDER BY id")->fetchAll();
-
-$categories = $db->query("SELECT * FROM categories")->fetchAll();
 foreach ($categories as $category) {
   echo "<a href='index.php?category=" . $category["id"] ."' class='no-text-decoration category' >" . $category["name"] . "</a>";
 }
