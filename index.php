@@ -15,20 +15,27 @@ $db = new PDO(
 
 //SELECT * FROM posts INNER JOIN categories ON posts.category_id=categories.id WHERE categories.name = "" ORDER BY price;
 
-$objects = $db->query("SELECT * FROM posts")->fetchAll();
-
-if (isset($_POST["search"])) {
-    if (isset($_POST["min"]) && isset($_POST["max"])) {
-        if (isset($_GET["category"])) {
-            // Query for a specific category
-            // FIXME: Check if category exists
-        }
-    }
+if (!empty($_POST["search"])){
+  $qry .= "WHERE title LIKE %" . $_POST["search"] . "% ";
+  $done = true;
+}
+if (!empty($_GET["category"])) {
+  $qry .= ($done ? "AND" : "") . "WHERE category_id = ? ";
+  $done = true;
+  array_push($arr, $_POST["category"]);
+}
+if (!empty($_POST["min"])) {
+  $qry .= ($done ? "AND" : "") . "WHERE price > " . $_POST["min"] . " ";
+  $done = true;
+  
+}
+if(!empty($_POST["max"])){
+  $qry .= ($done ? "AND" : "") . "WHERE price < " . $_POST["max"] . " ";
 }
 
-$categories = $db->query("SELECT * FROM categories ORDER BY id")->fetchAll();
-
-$categories = $db->query("SELECT * FROM categories")->fetchAll();
+$query = $db->prepare($qry);
+$query->execute($arr);
+$objects = $query->fetchAll();
 ?>
 
 <!DOCTYPE html>
