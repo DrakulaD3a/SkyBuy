@@ -107,7 +107,7 @@ foreach ($objects as $object) {
 
   ?>
   <a href="product.php?id=<?= $object["id"] ?>" class="flex align-items-start flex-column no-text-decoration padding-1 gap-half height-full <?= $class ?>">
-    <img src="data:image/png;base64,<?= $object["pic"] ?>" width="100%" />
+    <img src="data:image/png;base64,<?= $object["pic"] ?>" width="100%" class="image-post" />
     <h3><?= $object["title"] ?></h3>
     <p><?= $object["description"] ?></p>
   </a>
@@ -118,8 +118,8 @@ foreach ($objects as $object) {
 
         <div id="side-bar" class="visible flex align-items bg-dark-blue flex-column padding-1" >
           <h3>Kategorie:</h3>
+          <a href='index.php' class='no-text-decoration category' >vše</a>
 <?php
-echo "<a href='index.php' class='no-text-decoration category' >vše</a>";
 foreach ($categories as $category) {
   echo "<a href='index.php?category=" . $category["id"] ."' class='no-text-decoration category' >" . $category["name"] . "</a>";
 }

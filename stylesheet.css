@@ -125,6 +125,10 @@ a {
   padding-top: 5rem;
 }
 
+.image-post {
+  max-height: 20rem;
+}
+
 .category:hover {
   text-decoration: underline;
 }
@@ -270,5 +274,15 @@ a {
     grid-area: 3 / 1;
   }
 
+}
+
+@media (min-width: 2000px) {
+  html {
+    font-size: 24px;
+  }
+
+  .image-post {
+    max-height: 25rem;
+  }
 }
 

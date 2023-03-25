@@ -1,4 +1,5 @@
 <?php
+// FIXME: Only allow if the file is an image
 
 session_start();
 
