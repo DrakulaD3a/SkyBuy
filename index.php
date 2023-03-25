@@ -37,12 +37,13 @@ if(!empty($_POST["max"])){
   $qry .= ($done ? "AND" : "") . "WHERE price < " . $_POST["max"] . " ";
 }
 $query = $db->prepare($qry);
-if(!empty($arr)){
 
+if(!empty($arr)){
   $query->execute($arr);
 }else{
   $query->execute();
 }
+
 $objects = $query->fetchAll();
 ?>
 
