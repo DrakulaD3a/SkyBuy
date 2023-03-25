@@ -20,6 +20,8 @@ $objects = $db->query("SELECT * FROM posts")->fetchAll();
 if (isset($_POST["search"])) {
     if (isset($_POST["min"]) && isset($_POST["max"])) {
         if (isset($_GET["category"])) {
+            // Query for a specific category
+            // FIXME: Check if category exists
         }
     }
 }
@@ -38,18 +40,20 @@ if (isset($_POST["search"])) {
     <div id="header" class="flex space-between align-items-start padding-0-2" >
       <p>Logo</p>
 
-      <form method="post" class="flex align-items space-between round-border-bottom bg-dark-blue gap-half padding-0-1 height-3" >
-        <label for="search">Vyhledat:</label>
-        <input type="text" name="search" class="search" />
-        <label for="min">Cena od:</label>
-        <input type="number" name="min" class="width-2" />
-        <label for="max">do:</label>
-        <input type="number" name="max" class="width-2" />
-        <button type="submit">Vyhledat</button>
-      </form>
+      <div id="filter" class="flex align-items space-between bg-dark-blue gap-half" >
+        <form method="post">
+          <label for="search">Vyhledat:</label>
+          <input type="text" name="search" class="search" />
+          <label for="min">Cena od:</label>
+          <input type="number" name="min" class="width-2" />
+          <label for="max">do:</label>
+          <input type="number" name="max" class="width-2" />
+          <button type="submit">Vyhledat</button>
+        </form>
+      </div>
 
-      <div id="profile">
-        <span class="flex justify-content align-items bg-dark-blue round-border-bottom no-text-decoration white padding-0-2 height-3" >
+      <div id="profile" class="bg-dark-blue">
+        <span class="flex justify-content align-items padding-0-2 height-full" >
           Profil
         </span>
         <div id="profile-content" >
@@ -59,7 +63,7 @@ if (isset($_POST["search"])) {
       </div>
     </div>
 
-    <main id="main" class="bg-white black" >
+    <main id="main" >
 <?php
 $index = 0;
 
@@ -74,7 +78,7 @@ foreach ($objects as $object) {
   $index++;
 
   ?>
-  <a href="product.php?id=<?= $object["id"] ?>" class="flex align-items-start direction-column no-text-decoration padding-1 color-inherit gap-half height-100 <?= $class ?>">
+  <a href="product.php?id=<?= $object["id"] ?>" class="flex align-items-start direction-column no-text-decoration padding-1 gap-half height-full <?= $class ?>">
     <img src="data:image/png;base64,<?= $object["pic"] ?>" width="100%" />
     <h3><?= $object["title"] ?></h3>
     <p><?= $object["description"] ?></p>
@@ -84,14 +88,14 @@ foreach ($objects as $object) {
 ?>
     </main>
 
-        <div id="side-bar" class="flex align-items bg-dark-blue round-border direction-column height-min-content margin-2 padding-1" >
-        <h3>Kategorie:</h3>
+        <div id="side-bar" class="flex align-items bg-dark-blue direction-column padding-1" >
+          <h3>Kategorie:</h3>
 <?php
 $categories = $db->query("SELECT * FROM categories ORDER BY id")->fetchAll();
 
 $categories = $db->query("SELECT * FROM categories")->fetchAll();
 foreach ($categories as $category) {
-  echo "<a href='index.php?category=" . $category["id"] ."' class='white no-text-decoration category' >" . $category["name"] . "</a>";
+  echo "<a href='index.php?category=" . $category["id"] ."' class='no-text-decoration category' >" . $category["name"] . "</a>";
 }
 ?>
     </div>

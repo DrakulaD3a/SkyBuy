@@ -41,7 +41,7 @@ if (isset($_POST)) {
 
     <form method="post" class="main-form flex direction-column align-items justify-content gap-half bg-light-blue" >
 
-      <label for="username" class="padding-top-5" >Uživatelské jméno</label>
+      <label for="username" >Uživatelské jméno</label>
       <input name="username" id="username" required />
 
       <label for="password" >Heslo</label>

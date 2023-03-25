@@ -1,4 +1,6 @@
-/* TODO: Typeface */
+/* TODO:  Typeface
+          Buttons
+*/
 html,
 body {
   margin: 0;
@@ -29,6 +31,10 @@ button {
   color: white;
 }
 
+a {
+  color: inherit;
+}
+
 :root {
   --color-black: #00040d;
   --color-dark-blue: #3850ba;
@@ -47,14 +53,33 @@ button {
   grid-area: 1 / 1 / span 1 / span 2;
 }
 
+#header > div {
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  height: 3rem;
+}
+
+#filter {
+  padding: 0 1rem;
+}
+
 #side-bar {
   grid-area: 2 / 1;
+  border-radius: 0.5rem;
+  height: min-content;
+  margin: 2rem;
+}
+
+#side-bar > a {
+  color: white;
 }
 
 #main {
   grid-area: 2 / 2;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  background-color: var(--color-white);
+  color: black;
 }
 
 #footer {
@@ -63,6 +88,7 @@ button {
 
 #profile {
   display: inline-block;
+  color: white;
 }
 
 #profile-content {
@@ -93,6 +119,10 @@ button {
   grid-area: 1 / 2;
 }
 
+.main-form label:first-of-type {
+  padding-top: 5rem;
+}
+
 .category:hover {
   text-decoration: underline;
 }
@@ -105,10 +135,6 @@ button {
 
 .bg-light-blue {
   background-color: var(--color-light-blue);
-}
-
-.bg-white {
-  background-color: var(--color-white);
 }
 
 .flex {
@@ -127,15 +153,6 @@ button {
   align-items: flex-start;
 }
 
-.round-border {
-  border-radius: 0.5rem;
-}
-
-.round-border-bottom {
-  border-bottom-left-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
-}
-
 .width-2 {
   width: 2rem;
 }
@@ -148,32 +165,16 @@ button {
   flex-direction: column;
 }
 
-.height-3 {
-  height: 3rem;
-}
-
-.height-100 {
+.height-full {
   height: 100%;
-}
-
-.height-min-content {
-  height: min-content;
 }
 
 .padding-1 {
   padding: 1rem;
 }
 
-.padding-0-1 {
-  padding: 0 1rem;
-}
-
 .padding-0-2 {
   padding: 0 2rem;
-}
-
-.padding-top-5 {
-  padding-top: 5rem;
 }
 
 .border-right {
@@ -182,22 +183,6 @@ button {
 
 .border-top {
   border-top: 1px solid var(--color-light-blue);
-}
-
-.margin-2 {
-  margin: 2rem;
-}
-
-.black {
-  color: black;
-}
-
-.white {
-  color: white;
-}
-
-.color-inherit {
-  color: inherit;
 }
 
 .gap-half {

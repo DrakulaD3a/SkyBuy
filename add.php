@@ -52,7 +52,7 @@ if (isset($_POST["title"])) {
   <body class="form-body" >
 
     <form method="post" enctype="multipart/form-data" class="main-form flex direction-column align-items justify-content gap-half bg-light-blue" >
-      <label for="title" class="padding-top-5">Nadpis:</label>
+      <label for="title">Nadpis:</label>
       <input type="text" name="title" id="title" required>
 
       <label for="description">Popis:</label>
