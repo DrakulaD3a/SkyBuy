@@ -226,3 +226,41 @@ a {
 .gap-half {
   gap: 0.5rem;
 }
+
+/* ============================================================= */
+
+/* Login, register, add */
+@media (max-width: 800px) {
+  .form-body {
+    grid-template-columns: 100%;
+  }
+
+  .main-form {
+    grid-area: 1 / 1;
+  }
+}
+
+/* index */
+/* TODO: Add some way to filter */
+@media (max-width: 1000px) {
+  #main-body {
+    grid: 4rem auto 2rem / auto;
+  }
+
+  #header {
+    grid-area: 1 / 1;
+  }
+
+  #side-bar {
+    visibility: hidden;
+  }
+
+  #main {
+    grid-area: 2 / 1;
+  }
+
+  #footer {
+    grid-area: 3 / 1;
+  }
+}
+
