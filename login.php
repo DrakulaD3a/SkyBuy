@@ -22,14 +22,7 @@ $db = new PDO(
     <meta charset="UTF-8"/>
     <title>Bazoš - přihlášení</title>
     <link rel="stylesheet" type="text/css" href="stylesheet.css" />
-    <script>
-       function showSnackbar(message) {
-         var snackbar = document.getElementsByClassName("snackbar")[0];
-         snackbar.innerHTML = message;
-         snackbar.className += " show";
-         setTimeout(() => snackbar.className = snackbar.className.replace(" show", ""), 3000);
-      }
-    </script>
+    <script src="js/snackbar.js"></script>
   </head>
   <body class="form-body" >
 
@@ -44,8 +37,9 @@ if (isset($_POST)) {
         if (login($username, $password, $db)) {
             $_SESSION["username"] = $username;
             header("Location: index.php");
-        } else {
-            echo "<script>showSnackbar('Wrong username or password');</script>";
+        } else {?>
+            <script>showSnackbar('Wrong username or password');</script>
+          <?php
         }
     }
 }

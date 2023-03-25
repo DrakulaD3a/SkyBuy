@@ -22,14 +22,7 @@ $db = new PDO(
     <meta charset="UTF-8"/>
     <title>Bazoš - registrace</title>
     <link rel="stylesheet" type="text/css" href="stylesheet.css" />
-    <script>
-       function showSnackbar(message) {
-         var snackbar = document.getElementsByClassName("snackbar")[0];
-         snackbar.innerHTML = message;
-         snackbar.className += " show";
-         setTimeout(() => snackbar.className = snackbar.className.replace(" show", ""), 3000);
-      }
-    </script>
+    <script src="js/snackbar.js"></script>
   </head>
   <body class="form-body" >
 
@@ -55,17 +48,21 @@ if (isset($_POST)) {
 
                     $_SESSION["username"] = $username;
                     header("Location: index.php");
-                } else {
-                    echo "<script>showSnackbar('Username already exists');</script>";
+                } else {?>
+                    <script>showSnackbar('Username already exists');</script>
+                  <?php
                 }
-            } else {
-                echo "<script>showSnackbar('Password is not valid');</script>";
+            } else {?>
+                <script>showSnackbar('Password is not valid');</script>
+              <?php
             }
-        } else {
-            echo "<script>showSnackbar('Passwords do not match');</script>";
+        } else {?>
+            <script>showSnackbar('Passwords do not match');</script>
+          <?php
         }
-    } else {
-        echo "<script>showSnackbar('Username and password are required');</script>";
+    } else {?>
+        <script>showSnackbar('Username and password are required');</script>
+      <?php
     }
 }
 ?>
