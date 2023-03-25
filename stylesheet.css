@@ -243,10 +243,6 @@ a {
     font-size: 10px;
   }
 
-  input {
-    width: 3rem;
-  }
-
   .form-body {
     grid-template-columns: 100%;
   }
