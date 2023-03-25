@@ -161,7 +161,7 @@ a {
   text-decoration: none;
 }
 
-.direction-column {
+.flex-column {
   flex-direction: column;
 }
 

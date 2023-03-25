@@ -78,7 +78,7 @@ foreach ($objects as $object) {
   $index++;
 
   ?>
-  <a href="product.php?id=<?= $object["id"] ?>" class="flex align-items-start direction-column no-text-decoration padding-1 gap-half height-full <?= $class ?>">
+  <a href="product.php?id=<?= $object["id"] ?>" class="flex align-items-start flex-column no-text-decoration padding-1 gap-half height-full <?= $class ?>">
     <img src="data:image/png;base64,<?= $object["pic"] ?>" width="100%" />
     <h3><?= $object["title"] ?></h3>
     <p><?= $object["description"] ?></p>
@@ -88,7 +88,7 @@ foreach ($objects as $object) {
 ?>
     </main>
 
-        <div id="side-bar" class="flex align-items bg-dark-blue direction-column padding-1" >
+        <div id="side-bar" class="flex align-items bg-dark-blue flex-column padding-1" >
           <h3>Kategorie:</h3>
 <?php
 $categories = $db->query("SELECT * FROM categories ORDER BY id")->fetchAll();
@@ -101,7 +101,7 @@ foreach ($categories as $category) {
     </div>
 
     <footer id="footer" class="flex align-items space-between bg-light-blue padding-1" >
-      <!-- TODO -->
+      <!-- TODO: footer -->
       <p>footer</p>
       <p>footer</p>
     </footer>

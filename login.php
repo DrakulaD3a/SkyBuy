@@ -39,7 +39,7 @@ if (isset($_POST)) {
   </head>
   <body class="form-body" >
 
-    <form method="post" class="main-form flex direction-column align-items justify-content gap-half bg-light-blue" >
+    <form method="post" class="main-form flex flex-column align-items justify-content gap-half bg-light-blue" >
 
       <label for="username" >Uživatelské jméno</label>
       <input name="username" id="username" required />
