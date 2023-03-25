@@ -15,6 +15,10 @@ $db = new PDO(
 
 //SELECT * FROM posts INNER JOIN categories ON posts.category_id=categories.id WHERE categories.name = "" ORDER BY price;
 
+$qry = "SELECT * FROM posts ";
+$done = false;
+$arr = [];
+
 if (!empty($_POST["search"])){
   $qry .= "WHERE title LIKE %" . $_POST["search"] . "% ";
   $done = true;
@@ -32,9 +36,13 @@ if (!empty($_POST["min"])) {
 if(!empty($_POST["max"])){
   $qry .= ($done ? "AND" : "") . "WHERE price < " . $_POST["max"] . " ";
 }
-
 $query = $db->prepare($qry);
-$query->execute($arr);
+if(!empty($arr)){
+
+  $query->execute($arr);
+}else{
+  $query->execute();
+}
 $objects = $query->fetchAll();
 ?>
 
