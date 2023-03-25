@@ -26,10 +26,6 @@ if (isset($_POST["title"])) {
         $user_id = $db->query("SELECT id FROM users WHERE username = '" . $_SESSION["username"] . "'")->fetch()["id"];
 
         $image_raw = file_get_contents($_FILES["image"]["tmp_name"]);
-        if (!empty($_FILES["image"]["error"])) {
-            // TODO: Make it pretty
-            echo "Image too big";
-        }
 
         $stmt = $db->prepare(
             "INSERT INTO `posts` (user_id, category_id, pic, title, description, price, date) VALUES (?, ?, ?, ?, ?, ?, ?);"
@@ -39,7 +35,6 @@ if (isset($_POST["title"])) {
         header("Location: index.php");
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -48,8 +43,24 @@ if (isset($_POST["title"])) {
     <meta charset="UTF-8">
     <title>Bazoš - nový inzerát</title>
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <script>
+       function showSnackbar(message) {
+         var snackbar = document.getElementsByClassName("snackbar")[0];
+         snackbar.innerHTML = message;
+         snackbar.className += " show";
+         setTimeout(() => snackbar.className = snackbar.className.replace(" show", ""), 3000);
+      }
+    </script>
   </head>
   <body class="form-body" >
+
+    <div class="snackbar"></div>
+
+<?php
+if (!empty($_FILES["image"]["error"])) {
+    echo "<script>showSnackbar('Image too big');</script>";
+}
+?>
 
     <form method="post" enctype="multipart/form-data" class="main-form flex flex-column align-items justify-content gap-half bg-light-blue" >
       <label for="title">Nadpis:</label>

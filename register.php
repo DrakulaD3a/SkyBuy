@@ -8,6 +8,34 @@ if (!empty($_SESSION["username"])) {
 require_once "config.php";
 require_once "validation.php";
 
+$db = new PDO(
+    "mysql:host=" . DB_HOST . ";dbname=" . DB_USERNAME,
+    DB_USERNAME,
+    DB_PASSWORD
+);
+
+?>
+
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Bazoš - registrace</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+    <script>
+       function showSnackbar(message) {
+         var snackbar = document.getElementsByClassName("snackbar")[0];
+         snackbar.innerHTML = message;
+         snackbar.className += " show";
+         setTimeout(() => snackbar.className = snackbar.className.replace(" show", ""), 3000);
+      }
+    </script>
+  </head>
+  <body class="form-body" >
+
+    <div class="snackbar"></div>
+
+<?php
 if (isset($_POST)) {
     [
         "username" => $username,
@@ -15,12 +43,6 @@ if (isset($_POST)) {
         "password-repeat" => $password_repeat,
     ] = $_POST;
     $username = strtolower($username);
-
-    $db = new PDO(
-        "mysql:host=" . DB_HOST . ";dbname=" . DB_USERNAME,
-        DB_USERNAME,
-        DB_PASSWORD
-    );
 
     if (!empty($username) && !empty($password)) {
         if ($password == $password_repeat) {
@@ -34,27 +56,19 @@ if (isset($_POST)) {
                     $_SESSION["username"] = $username;
                     header("Location: index.php");
                 } else {
-                    echo "Username already exists";
+                    echo "<script>showSnackbar('Username already exists');</script>";
                 }
             } else {
-                echo "Password is not valid";
+                echo "<script>showSnackbar('Password is not valid');</script>";
             }
         } else {
-            echo "Passwords do not match";
+            echo "<script>showSnackbar('Passwords do not match');</script>";
         }
+    } else {
+        echo "<script>showSnackbar('Username and password are required');</script>";
     }
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="cs">
-  <head>
-    <meta charset="UTF-8"/>
-    <title>Bazoš - registrace</title>
-    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
-  </head>
-  <body class="form-body" >
-
     <form method="post" class="main-form flex flex-column align-items justify-content gap-half bg-light-blue" >
 
       <label for="username" >Uživatelské jméno</label>
@@ -67,7 +81,7 @@ if (isset($_POST)) {
       <input type="password" name="password-repeat" id="password-repeat" required />
 
       <button type="submit" id="submit" >Zaregistrovat se</button>
-      <p>Již máte účet?<a href="login.php" >Přihlašte se</a></p>
+      <p>Již máte účet? <a href="login.php" >Přihlašte se</a></p>
 
     </form>
 
