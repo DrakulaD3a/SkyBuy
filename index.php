@@ -20,21 +20,21 @@ $done = false;
 $arr = [];
 
 if (!empty($_POST["search"])){
-  $qry .= "WHERE title LIKE %" . $_POST["search"] . "% ";
+  $qry .= "WHERE title LIKE \"%" . $_POST["search"] . "%\" ";
   $done = true;
 }
 if (!empty($_GET["category"])) {
-  $qry .= ($done ? "AND" : "") . "WHERE category_id = ? ";
+  $qry .= ($done ? "AND " : "WHERE ") . "category_id = ? ";
   $done = true;
-  array_push($arr, $_POST["category"]);
+  array_push($arr, $_GET["category"]);
 }
 if (!empty($_POST["min"])) {
-  $qry .= ($done ? "AND" : "") . "WHERE price > " . $_POST["min"] . " ";
+  $qry .= ($done ? "AND " : "WHERE ") . "price > " . $_POST["min"] . " ";
   $done = true;
   
 }
 if(!empty($_POST["max"])){
-  $qry .= ($done ? "AND" : "") . "WHERE price < " . $_POST["max"] . " ";
+  $qry .= ($done ? "AND " : "WHERE ") . "price < " . $_POST["max"] . " ";
 }
 $query = $db->prepare($qry);
 
@@ -44,7 +44,13 @@ if(!empty($arr)){
   $query->execute();
 }
 
+
+
 $objects = $query->fetchAll();
+
+$query = $db->query('SELECT * FROM categories;');
+$categories = $query->fetchAll();
+
 ?>
 
 <!DOCTYPE html>
@@ -113,6 +119,7 @@ foreach ($objects as $object) {
         <div id="side-bar" class="visible flex align-items bg-dark-blue flex-column padding-1" >
           <h3>Kategorie:</h3>
 <?php
+echo "<a href='index.php' class='no-text-decoration category' >vše</a>";
 foreach ($categories as $category) {
   echo "<a href='index.php?category=" . $category["id"] ."' class='no-text-decoration category' >" . $category["name"] . "</a>";
 }
