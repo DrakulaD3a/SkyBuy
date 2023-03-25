@@ -43,22 +43,16 @@ if (isset($_POST["title"])) {
     <meta charset="UTF-8">
     <title>Bazoš - nový inzerát</title>
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    <script>
-       function showSnackbar(message) {
-         var snackbar = document.getElementsByClassName("snackbar")[0];
-         snackbar.innerHTML = message;
-         snackbar.className += " show";
-         setTimeout(() => snackbar.className = snackbar.className.replace(" show", ""), 3000);
-      }
-    </script>
+    <script src="js/snackbar.js"></script>
   </head>
   <body class="form-body" >
 
     <div class="snackbar"></div>
 
 <?php
-if (!empty($_FILES["image"]["error"])) {
-    echo "<script>showSnackbar('Image too big');</script>";
+if (!empty($_FILES["image"]["error"])) {?>
+    <script>showSnackbar('Image too big');</script>
+  <?php
 }
 ?>
 

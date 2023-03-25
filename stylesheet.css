@@ -237,14 +237,9 @@ a {
 
 /* ============================================================= */
 
-/* Login, register, add */
 @media (max-width: 1000px) {
-  html {
-    font-size: 10px;
-  }
-
   .form-body {
-    grid-template-columns: 100%;
+    grid-template-columns: 100vw;
   }
 
   .main-form {
