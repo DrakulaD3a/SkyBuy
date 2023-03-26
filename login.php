@@ -1,4 +1,5 @@
 <?php
+// TODO: Stay signed in
 session_start();
 
 if (!empty($_SESSION["username"])) {
