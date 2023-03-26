@@ -6,6 +6,10 @@ if (!empty($_SESSION["username"])) {
     header("Location: index.php");
 }
 
+if (!empty($_COOKIE["username"])) {
+    $_SESSION["username"] = $_COOKIE["username"];
+}
+
 require_once "config.php";
 require_once "validation.php";
 
@@ -37,6 +41,9 @@ if (isset($_POST)) {
 
         if (login($username, $password, $db)) {
             $_SESSION["username"] = $username;
+            if (isset($_POST["stay-signed-in"])) {
+                setcookie("username", $username, time() + 60 * 60 * 24 * 365, '/');
+            }
             header("Location: index.php");
         } else {?>
             <script>showSnackbar('Wrong username or password');</script>
@@ -52,6 +59,9 @@ if (isset($_POST)) {
 
       <label for="password" >Heslo</label>
       <input type="password" name="password" id="password" required />
+
+      <input type="checkbox" name="stay-signed-in" id="stay-signed-in" />
+      <label for="stay-signed-in" >Zůstat přihlášen</label>
 
       <button type="submit" id="submit" >Přihlásit se</button>
       <p>Ještě nemáte účet? <a href="register.php" >Vytvořte si ho</a></p>

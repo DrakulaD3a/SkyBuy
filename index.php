@@ -4,7 +4,11 @@ session_start();
 require_once "config.php";
 
 if (empty($_SESSION["username"])) {
-    header("Location: login.php");
+    if (!empty($_COOKIE["username"])) {
+        $_SESSION["username"] = $_COOKIE["username"];
+    } else {
+        header("Location: login.php");
+    }
 }
 
 $db = new PDO(

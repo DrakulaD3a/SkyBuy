@@ -3,6 +3,10 @@ session_start();
 
 if (!empty($_SESSION["username"])) {
     header("Location: index.php");
+} else {
+    if (!empty($_COOKIE["username"])) {
+        $_SESSION["username"] = $_COOKIE["username"];
+    }
 }
 
 require_once "config.php";
@@ -47,6 +51,9 @@ if (isset($_POST)) {
                     $stmt->execute([$username, md5($password)]);
 
                     $_SESSION["username"] = $username;
+                    if (isset($_POST['stay-signed-in'])) {
+                        setcookie("username", $username, time() + 60 * 60 * 24 * 365, '/');
+                    }
                     header("Location: index.php");
                 } else {?>
                     <script>showSnackbar('Username already exists');</script>
@@ -76,6 +83,9 @@ if (isset($_POST)) {
 
       <label for="password" >Heslo znovu</label>
       <input type="password" name="password-repeat" id="password-repeat" required />
+
+      <input type="checkbox" name="stay-signed-in" id="stay-signed-in" />
+      <label for="stay-signed-in" >Zůstat přihlášen</label>
 
       <button type="submit" id="submit" >Zaregistrovat se</button>
       <p>Již máte účet? <a href="login.php" >Přihlašte se</a></p>
