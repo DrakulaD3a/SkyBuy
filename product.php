@@ -39,9 +39,11 @@ $post = $query->fetch();
   <body>
     <div id="container">
       <div id="product-title">
-        <h1><?= $post['title'] ?></h1>
+        <h1 id="product-title-text"><?= $post['title'] ?></h1>
       </div>
-      <!-- <p><?= $post['description'] ?></p> -->
+      <div id="product-description">
+        <p><?= $post['description'] . "<br>" . $post['price']?></p>
+      </div>
       <img id="img" src="data:image/png;base64,<?= $post['pic'] ?>"/>
   </div>
   </body>
