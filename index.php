@@ -13,44 +13,6 @@ $db = new PDO(
     DB_PASSWORD
 );
 
-//SELECT * FROM posts INNER JOIN categories ON posts.category_id=categories.id WHERE categories.name = "" ORDER BY price;
-
-$qry = "SELECT * FROM posts ";
-$done = false;
-$arr = [];
-
-if (!empty($_POST["search"])){
-  $qry .= "WHERE title LIKE \"%" . $_POST["search"] . "%\" ";
-  $done = true;
-}
-if (!empty($_GET["category"])) {
-  $qry .= ($done ? "AND " : "WHERE ") . "category_id = ? ";
-  $done = true;
-  array_push($arr, $_GET["category"]);
-}
-if (!empty($_POST["min"])) {
-  $qry .= ($done ? "AND " : "WHERE ") . "price > " . $_POST["min"] . " ";
-  $done = true;
-  
-}
-if(!empty($_POST["max"])){
-  $qry .= ($done ? "AND " : "WHERE ") . "price < " . $_POST["max"] . " ";
-}
-$query = $db->prepare($qry);
-
-if(!empty($arr)){
-  $query->execute($arr);
-}else{
-  $query->execute();
-}
-
-
-
-$objects = $query->fetchAll();
-
-$query = $db->query('SELECT * FROM categories;');
-$categories = $query->fetchAll();
-
 ?>
 
 <!DOCTYPE html>
@@ -91,8 +53,53 @@ $categories = $query->fetchAll();
       </div>
     </div>
 
+    <div id="side-bar" class="visible flex align-items bg-dark-blue flex-column padding-1" >
+      <h3>Kategorie:</h3>
+      <a href='index.php' class='no-text-decoration category' >vše</a>
+<?php
+$query = $db->query('SELECT * FROM categories;');
+$categories = $query->fetchAll();
+
+foreach ($categories as $category) {
+  echo "<a href='index.php?category=" . $category["id"] ."' class='no-text-decoration category' >" . $category["name"] . "</a>";
+}
+?>
+    </div>
+
     <main id="main" >
 <?php
+$qry = "SELECT * FROM posts ";
+$done = false;
+$arr = [];
+
+if (!empty($_POST["search"])){
+  $qry .= "WHERE title LIKE \"%" . $_POST["search"] . "%\" ";
+  $done = true;
+}
+if (!empty($_GET["category"])) {
+  $qry .= ($done ? "AND " : "WHERE ") . "category_id = ? ";
+  $done = true;
+  array_push($arr, $_GET["category"]);
+}
+if (!empty($_POST["min"])) {
+  $qry .= ($done ? "AND " : "WHERE ") . "price > " . $_POST["min"] . " ";
+  $done = true;
+  
+}
+if(!empty($_POST["max"])){
+  $qry .= ($done ? "AND " : "WHERE ") . "price < " . $_POST["max"] . " ";
+}
+$query = $db->prepare($qry);
+
+if(!empty($arr)){
+  $query->execute($arr);
+}else{
+  $query->execute();
+}
+
+$objects = $query->fetchAll();
+
+
 $index = 0;
 
 foreach ($objects as $object) {
@@ -115,16 +122,6 @@ foreach ($objects as $object) {
 }
 ?>
     </main>
-
-        <div id="side-bar" class="visible flex align-items bg-dark-blue flex-column padding-1" >
-          <h3>Kategorie:</h3>
-          <a href='index.php' class='no-text-decoration category' >vše</a>
-<?php
-foreach ($categories as $category) {
-  echo "<a href='index.php?category=" . $category["id"] ."' class='no-text-decoration category' >" . $category["name"] . "</a>";
-}
-?>
-    </div>
 
     <footer id="footer" class="flex align-items space-between bg-light-blue padding-1" >
       <!-- TODO: footer -->
