@@ -49,8 +49,8 @@ $post = $query->fetch();
           <br>
           <li><strong>popis:</strong></li>
           <div id="product-description-content"><?=$post['description']?></div>
-          <li><a href="index.php"><strong>zpět</strong></a></li>
         </ul>
+        <a id="back-a" href="index.php">zpět</a>
       </div>
       <img id="img" src="data:image/png;base64,<?= $post['pic'] ?>"/>
   </div>
