@@ -37,6 +37,11 @@ a {
   color: inherit;
 }
 
+li{
+  text-indent: 0.5rem;
+  white-space: pre-wrap;
+}
+
 :root {
   --color-black: #00040d;
   --color-dark-blue: #3850ba;
@@ -129,6 +134,12 @@ a {
   margin: 2rem;
   color: #00040d;
   padding: 1rem;
+}
+
+#product-description-content{
+  margin-top: 0.5rem;
+  margin-left: 2rem;  
+  white-space: pre-wrap;
 }
 
 #footer {
