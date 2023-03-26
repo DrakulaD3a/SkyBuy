@@ -3,11 +3,12 @@ session_start();
 
 if (!empty($_SESSION["username"])) {
     header("Location: index.php");
-} else {
-    if (!empty($_COOKIE["username"])) {
-        $_SESSION["username"] = $_COOKIE["username"];
-    }
 }
+
+if (!empty($_COOKIE["username"])) {
+    $_SESSION["username"] = $_COOKIE["username"];
+}
+
 
 require_once "config.php";
 require_once "validation.php";
