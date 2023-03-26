@@ -43,7 +43,7 @@ $post = $query->fetch();
       </div>
       <div id="product-description">
         <ul>
-          <li><strong>přidáno:</strong> <?= date("d.m.Y", strtotime($post['date'])) ?></li>
+          <li><strong>přidáno:</strong>  <?= date("d.m.Y", strtotime($post['date'])) ?></li>
           <br>
           <li><strong>cena:</strong>  <?= $post['price']?> Kč</li>
           <br>
