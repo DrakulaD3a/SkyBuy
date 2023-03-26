@@ -21,15 +21,21 @@ input {
   height: 1.5rem;
 }
 
+form{
+  color: #00040d;
+}
+
 h1 {
   font-size: 3rem;
 }
 
 button {
   border: none;
-  background-color: transparent;
+  background-color: var(--color-dark-blue);
   cursor: pointer;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
   color: white;
 }
 
