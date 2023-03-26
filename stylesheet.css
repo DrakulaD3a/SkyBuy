@@ -121,7 +121,7 @@ li{
 #product-title-text{
   background-color: var(--color-dark-blue);
   border-radius: 0.5rem;
-  padding: 2rem;
+  padding: 2rem 4rem;
 }
 
 #product-description{
