@@ -37,8 +37,12 @@ $post = $query->fetch();
     <link rel="stylesheet" type="text/css" href="stylesheet.css" />
   </head>
   <body>
-    <h1><?= $post['title'] ?></h1>
-    <p><?= $post['description'] ?></p>
-    <img src="data:image/png;base64,<?= $post['pic'] ?>" />
+    <div id="container">
+      <div id="product-title">
+        <h1><?= $post['title'] ?></h1>
+      </div>
+      <!-- <p><?= $post['description'] ?></p> -->
+      <img id="img" src="data:image/png;base64,<?= $post['pic'] ?>"/>
+  </div>
   </body>
 </html>
