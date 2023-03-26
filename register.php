@@ -85,8 +85,9 @@ if (isset($_POST)) {
       <label for="password" >Heslo znovu</label>
       <input type="password" name="password-repeat" id="password-repeat" required />
 
-      <input type="checkbox" name="stay-signed-in" id="stay-signed-in" />
       <label for="stay-signed-in" >Zůstat přihlášen</label>
+      <input type="checkbox" name="stay-signed-in" id="stay-signed-in" />
+      
 
       <button type="submit" id="submit" >Zaregistrovat se</button>
       <p>Již máte účet? <a href="login.php" >Přihlašte se</a></p>
