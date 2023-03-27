@@ -85,6 +85,8 @@ foreach ($categories as $category) {
       <input type="file" name="image" id="image" accept="image/*" required>
 
       <button type="submit">Přidat</button>
+      
+      <a href="index.php">zpět</a>
     </form>
 
   </body>

@@ -42,6 +42,10 @@ h1 {
   font-size: 3rem;
 }
 
+h4{
+  margin: 0;
+}
+
 button {
   border: none;
   background-color: var(--color-dark-blue);
@@ -68,6 +72,7 @@ li{
   --color-dark-blue: #3850ba;
   --color-light-blue: #adddf5;
   --color-white: #ffffff;
+  --color-red: #fa0000;
 }
 
 /* ============================================================= */
@@ -177,6 +182,14 @@ li{
   color: var(--color-white);
 }
 
+#del-post{
+  background-color: var(--color-red);
+  text-decoration: none;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  margin-left: calc(50% - 2rem);
+  color: var(--color-white);
+}
 
 #footer {
   grid-area: 3 / 1 / span 1 / span 2;
@@ -192,6 +205,7 @@ li{
   position: absolute;
   z-index: 1;
   background-color: var(--color-light-blue);
+  color: var(--color-black);
 }
 
 #profile-content a {
