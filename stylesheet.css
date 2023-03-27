@@ -142,14 +142,17 @@ li{
 
 #product-description{
   grid-row-start: 2;
-  grid-row-end: 3;
+  grid-row-end: 4;
   grid-column-start: 2;
   grid-column-end: 3;
+  max-height: 60vh;
+  height: min-content;
   background-color: var(--color-light-blue);
   border-radius: 0.5rem;
   margin: 2rem;
   color: #00040d;
   padding: 1rem;
+  padding-bottom: 2rem;
   overflow: scroll;
 }
 
