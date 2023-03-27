@@ -59,7 +59,7 @@ if (!empty($_FILES["image"]["error"])) {?>
 
     <form method="post" enctype="multipart/form-data" class="main-form flex flex-column align-items justify-content gap-half bg-light-blue" >
       <label for="title">Nadpis:</label>
-      <input type="text" name="title" id="title" required>
+      <input type="text" name="title" id="title" maxlength="50" required>
 
       <label for="description">Popis:</label>
       <textarea name="description" id="description" maxlength="3000" required></textarea>
@@ -75,7 +75,7 @@ foreach ($categories as $category) {
       </select>
 
       <label for="price">Cena:</label>
-      <input type="number" name="price" id="price" required>
+      <input type="number" name="price" id="price" max="10000000" required>
 
       <label for="image">Obrázek:</label>
       <input type="file" name="image" id="image" accept="image/*" required>

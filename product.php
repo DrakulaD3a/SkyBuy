@@ -43,14 +43,14 @@ $post = $query->fetch();
       </div>
       <div id="product-description">
         <ul>
-          <li><strong>cena:</strong>  <?= $post['price']?> Kč</li>
+          <li><strong>přidáno:</strong>  <?= date("d.m.Y", strtotime($post['date'])) ?></li>
           <br>
-          <li><strong>datum:</strong> <?= date("d.m.Y", strtotime($post['date'])) ?></li>
+          <li><strong>cena:</strong>  <?= $post['price']?> Kč</li>
           <br>
           <li><strong>popis:</strong></li>
           <div id="product-description-content"><?=$post['description']?></div>
-          <li><a href="index.php"><strong>zpět</strong></a></li>
         </ul>
+        <a id="back-a" href="index.php">zpět</a>
       </div>
       <img id="img" src="data:image/png;base64,<?= $post['pic'] ?>"/>
   </div>

@@ -35,7 +35,7 @@ $db = new PDO(
       <p>Logo</p>
 
       <div id="filter" class="flex space-between align-items bg-dark-blue gap-half visible" >
-        <form method="post">
+        <form method="post" class="white">
           <label for="search">Vyhledat:</label>
           <input type="text" name="search" class="search" />
           <label for="min">Cena od:</label>
