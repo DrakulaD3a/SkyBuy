@@ -52,7 +52,8 @@ $db = new PDO(
         </span>
         <div id="profile-content" >
           <a href="logout.php">Odhlásit</a>
-          <a href="add.php">Přidat Inzerát</a>
+          <a href="add.php">Přidat inzerát</a>
+          <a href="products.php">Vaše inzeráty</a>
         </div>
       </div>
     </div>
@@ -120,7 +121,7 @@ foreach ($objects as $object) {
   <a href="product.php?id=<?= $object["id"] ?>" class="flex align-items-start flex-column no-text-decoration padding-1 gap-half height-full <?= $class ?>">
     <img src="data:image/png;base64,<?= $object["pic"] ?>" width="100%" class="image-post" />
     <h3><?= $object["title"] ?></h3>
-    <p><?= $object["description"] ?></p>
+    <p><?= strlen($object["description"]) > 500 ? substr($object["description"], 0, 500) . "..." : $object["description"]?></p>
   </a>
   <?php
 }
