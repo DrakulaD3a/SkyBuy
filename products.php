@@ -102,6 +102,9 @@ if (!empty($_POST["min"])) {
 if(!empty($_POST["max"])){
   $qry .= "AND price < " . $_POST["max"] . " ";
 }
+
+$qry .= "ORDER BY date desc";
+
 $query = $db->prepare($qry);
 
 $query->execute($arr);
