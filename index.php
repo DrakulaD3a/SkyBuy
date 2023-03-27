@@ -44,6 +44,11 @@ $db = new PDO(
           <input type="number" name="max" id="max" />
           <button type="submit">Vyhledat</button>
         </form>
+        <div id="sort">
+          Řadit podle: 
+          <a class="no-text-decoration" href="index.php?sort=price">ceny</a> | 
+          <a class="no-text-decoration" href="index.php?sort=data">data</a>
+        </div>
       </div>
 
       <div id="profile" class="bg-dark-blue visible">
@@ -96,7 +101,8 @@ if(!empty($_POST["max"])){
   $qry .= ($done ? "AND " : "WHERE ") . "price < " . $_POST["max"] . " ";
 }
 
-$qry .= "ORDER BY date desc";
+$qry .= "ORDER BY ";
+$qry .= $_GET["sort"] == "price" ? "price ASC" : "date DESC";
 
 $query = $db->prepare($qry);
 

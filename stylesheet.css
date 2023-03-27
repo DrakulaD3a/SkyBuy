@@ -111,6 +111,11 @@ li{
   color: white;
 }
 
+#sort{
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+}
+
 #main {
   grid-area: 2 / 2;
   display: grid;
@@ -354,6 +359,8 @@ li{
 .white{
   color: var(--color-white);
 }
+
+
 
 /* ============================================================= */
 
