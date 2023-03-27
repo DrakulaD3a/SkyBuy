@@ -52,7 +52,8 @@ $db = new PDO(
         </span>
         <div id="profile-content" >
           <a href="logout.php">Odhlásit</a>
-          <a href="add.php">Přidat Inzerát</a>
+          <a href="add.php">Přidat inzerát</a>
+          <a href="products.php">Vaše inzeráty</a>
         </div>
       </div>
     </div>
