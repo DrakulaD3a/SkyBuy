@@ -20,6 +20,11 @@ input {
   color: black;
   height: 1.5rem;
   margin: 0;
+  width: 15rem;
+}
+
+select{
+  width: 15rem;
 }
 
 textarea{

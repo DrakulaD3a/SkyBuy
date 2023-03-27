@@ -26,6 +26,12 @@ if ($query->rowCount() == 0) {
 
 $post = $query->fetch();
 
+$query = $db->prepare("SELECT username FROM `users` WHERE `id` = ?");
+$query->execute([$post["user_id"]]);
+
+$user = $query->fetch();
+
+
 ?>
 
 <!-- TODO: Create this page -->
@@ -43,9 +49,11 @@ $post = $query->fetch();
       </div>
       <div id="product-description">
         <ul>
-          <li><strong>přidáno:</strong>  <?= date("d.m.Y", strtotime($post['date'])) ?></li>
+          <li><strong>přidáno:</strong>  <?= date("d.m.Y", strtotime($post['date'])) ?> <strong>uživatelem</strong> <?= $user["username"]?></li>
           <br>
           <li><strong>cena:</strong>  <?= $post['price']?> Kč</li>
+          <br>
+          <li><strong>kontakt:</strong>  <?= $post['contact']?></li>
           <br>
           <li><strong>popis:</strong></li>
           <div id="product-description-content"><?=$post['description']?></div>

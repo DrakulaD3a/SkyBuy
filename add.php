@@ -19,6 +19,7 @@ if (isset($_POST["title"])) {
     if (empty($_FILES["image"]["error"])) {
         [
             "title" => $title,
+            "contact" => $contact,
             "description" => $description,
             "category" => $category_id,
             "price" => $price,
@@ -29,9 +30,9 @@ if (isset($_POST["title"])) {
         $image_raw = file_get_contents($_FILES["image"]["tmp_name"]);
 
         $stmt = $db->prepare(
-            "INSERT INTO `posts` (user_id, category_id, pic, title, description, price, date) VALUES (?, ?, ?, ?, ?, ?, ?);"
+            "INSERT INTO `posts` (user_id, category_id, contact, pic, title, description, price, date) VALUES (?, ?, ?, ?, ?, ?, ?, ?);"
         );
-        $stmt->execute([$user_id, $category_id, base64_encode($image_raw), $title, $description, $price, date("Y-m-d H:i:s")]);
+        $stmt->execute([$user_id, $category_id, $contact, base64_encode($image_raw), $title, $description, $price, date("Y-m-d H:i:s")]);
 
         header("Location: index.php");
     }
@@ -60,6 +61,9 @@ if (!empty($_FILES["image"]["error"])) {?>
     <form method="post" enctype="multipart/form-data" class="main-form flex flex-column align-items justify-content gap-half bg-light-blue" >
       <label for="title">Nadpis:</label>
       <input type="text" name="title" id="title" maxlength="50" required>
+
+      <label for="contact">Kontakt:</label>
+      <input type="text" name="contact" id="contact" maxlength="50" required>
 
       <label for="description">Popis:</label>
       <textarea name="description" id="description" maxlength="3000" required></textarea>
