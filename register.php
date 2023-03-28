@@ -89,7 +89,7 @@ if (isset($_POST)) {
       <input type="checkbox" name="stay-signed-in" id="stay-signed-in" />
       
 
-      <button type="submit" id="submit" >Zaregistrovat se</button>
+      <button type="submit" id="submit" class="margin-top">Zaregistrovat se</button>
       <p>Již máte účet? <a href="login.php" >Přihlašte se</a></p>
 
     </form>

@@ -52,7 +52,6 @@ button {
   cursor: pointer;
   border-radius: 1rem;
   padding: 0.5rem;
-  margin-top: 0.5rem;
   color: white;
   font-family: serif;
   font-size: 1rem;
@@ -116,7 +115,6 @@ li{
 }
 
 #sort{
-  margin-top: 0.5rem;
   margin-left: 0.5rem;
 }
 
@@ -345,6 +343,10 @@ li{
 
 .padding-1 {
   padding: 1rem;
+}
+
+.margin-top{
+  margin-top: 0.5rem;
 }
 
 .padding-0-2 {
