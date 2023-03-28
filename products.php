@@ -36,7 +36,7 @@ $db = new PDO(
 
       <div>
           Vaše inzeráty
-</div>
+      </div>
 
       <div id="filter" class="flex space-between align-items bg-dark-blue gap-half visible" >
         <form method="post" class="white">
