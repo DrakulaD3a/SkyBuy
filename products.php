@@ -34,10 +34,6 @@ $db = new PDO(
     <div id="header" class="flex space-between align-items-start padding-0-2" >
       <p>Logo</p>
 
-      <div>
-          Vaše inzeráty
-      </div>
-
       <div id="filter" class="flex space-between align-items bg-dark-blue gap-half visible" >
         <form method="post" class="white">
           <label for="search">Vyhledat:</label>
