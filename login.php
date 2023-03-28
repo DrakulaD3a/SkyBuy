@@ -58,7 +58,7 @@ if (isset($_POST)) {
 
       <label for="password" >Heslo</label>
       <input type="password" name="password" id="password" required />
-
+  
       <label for="stay-signed-in" >Zůstat přihlášen</label>
       <input type="checkbox" name="stay-signed-in" id="stay-signed-in" />
       

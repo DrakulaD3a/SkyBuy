@@ -92,6 +92,10 @@ li{
   height: 3rem;
 }
 
+#stay-signed-in{
+  height: 1rem;
+}
+
 #filter {
   padding: 0 1rem;
 }
