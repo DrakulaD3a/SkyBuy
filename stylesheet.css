@@ -191,6 +191,12 @@ li{
   color: var(--color-white);
 }
 
+
+#your-posts{
+  background-color: var(--color-dark-blue);
+  padding-top: 1rem;
+}
+
 #del-post{
   background-color: var(--color-red);
   text-decoration: none;
@@ -346,6 +352,14 @@ li{
 
 .border-top {
   border-top: 1px solid var(--color-light-blue);
+}
+
+.border-radius{
+  border-radius: 1rem;
+}
+
+.display-inline-block{
+  display: inline-block;
 }
 
 .gap-half {

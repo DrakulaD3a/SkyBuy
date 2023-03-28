@@ -34,6 +34,10 @@ $db = new PDO(
     <div id="header" class="flex space-between align-items-start padding-0-2" >
       <p>Logo</p>
 
+      <div>
+          Vaše inzeráty
+</div>
+
       <div id="filter" class="flex space-between align-items bg-dark-blue gap-half visible" >
         <form method="post" class="white">
           <label for="search">Vyhledat:</label>
@@ -50,7 +54,7 @@ $db = new PDO(
           <a class="no-text-decoration" href="products.php?sort=data">data</a>
         </div>
       </div>
-
+      
       <div id="profile" class="bg-dark-blue visible">
         <span class="flex justify-content align-items padding-0-2 height-full" >
           Profil
