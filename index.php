@@ -65,7 +65,9 @@ if (!empty($arr)) {
 
 <body id="main-body">
 
-  <div id="logo"></div>
+  <div id="logo">
+    <img src="assets/logo.png" />
+  </div>
 
   <div>
     <form id="search-bar">

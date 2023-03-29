@@ -1,5 +1,13 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-black);
+  font-size: 20px;
+}
+
 :root {
-  --color-black: #00040d;
+  /* --color-black: #00040d; */
   --color-dark-blue: #3850ba;
   --color-light-blue: #adddf5;
   --color-white: #ffffff;
@@ -8,6 +16,18 @@
   --color-black: #080808;
   --color-blue: #002695;
   --color-neon: #affbff;
+}
+
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+#logo img {
+  width: 10rem;
+  height: 10rem;
 }
 
 #categories li {
@@ -22,6 +42,7 @@
   padding: 1rem;
   border-radius: 50px;
   gap: 1rem;
+  margin: 0 5rem;
 }
 
 #search-bar input {
