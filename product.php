@@ -39,7 +39,8 @@ $user = $query->fetch();
 <html lang="cz">
   <head>
     <meta charset="UTF-8">
-    <title>Bazoš</title>
+    <title>Sky-buy</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="stylesheet.css" />
     <link rel="stylesheet" type="text/css" href="stylesheet-product.css" />
   </head>
