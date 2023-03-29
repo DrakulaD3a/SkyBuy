@@ -62,6 +62,10 @@ $db = new PDO(
           <a href="index.php">Všechny inzeráty</a>
         </div>
       </div>
+
+      <div class="hidden">
+        some text
+      </div>
     </div>
 
     <div id="side-bar" class="visible flex align-items bg-dark-blue flex-column padding-1" >
