@@ -61,9 +61,10 @@ if (!empty($arr)) {
   <link rel="stylesheet" type="text/css" href="stylesheet.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Online bazar pro každého">
+  <script src="https://kit.fontawesome.com/d9f7f676cb.js" crossorigin="anonymous"></script>
 </head>
 
-<body id="main-body">
+<body>
 
   <div id="logo">
     <img src="assets/logo.png" />
@@ -72,11 +73,11 @@ if (!empty($arr)) {
   <div>
     <form id="search-bar">
       <input type="text" maxlength="32" />
-      <button type="submit">Vyhledat</button>
+      <button type="submit"><i class="fa-solid fa-magnifying-glass fa-2xl"></i></button>
     </form>
   </div>
 
-  <main>
+  <main id="main">
 
     <div id="categories">
       <h3>Kategorie</h3>
