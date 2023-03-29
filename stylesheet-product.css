@@ -18,6 +18,10 @@ img{
   width: calc(50vw - 3rem);
 }
 
+li{
+  margin-bottom: 0.5rem;
+}
+
 #img-container{
   grid-row-start: 3;
   grid-row-end: 4;
@@ -40,6 +44,7 @@ img{
   text-decoration: underline;
   text-decoration-thickness: 3px;
   text-underline-offset: 5px ;
+  margin-bottom: 2rem;
 }
 
 #product-description{
@@ -48,4 +53,8 @@ img{
   grid-column-start: 2;
   grid-column-end: 3;
   padding-left: 2rem;
+}
+
+#product-description-content{
+  white-space: pre-wrap;
 }
