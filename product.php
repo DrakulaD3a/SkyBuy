@@ -53,7 +53,7 @@ $user = $query->fetch();
         <li><strong>přidáno:</strong>  <?= date("d.m.Y", strtotime($post['date'])) ?> <strong>uživatelem</strong> <?= $user["username"]?></li>
         <li><strong>kontakt:</strong>  <?= $post['contact']?></li>
         <li><strong>popis:</strong></li>
-        <div id="product-description-content"><?=$post['description']?></div>
+        <div id="product-description-content">   <?=$post['description']?></div>
       </ul>
       <a id="back-a" href="index.php">zpět</a>
     </div>
