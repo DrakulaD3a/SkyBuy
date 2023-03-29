@@ -51,7 +51,7 @@ $db = new PDO(
         </div>
       </div>
 
-      <div id="profile" class="bg-dark-blue visible">
+      <div id="profile" class="bg-dark-blue">
         <span class="flex justify-content align-items padding-0-2 height-full" >
           Profil
         </span>
@@ -63,9 +63,6 @@ $db = new PDO(
         </div>
       </div>
 
-      <div class="hidden">
-        some text
-      </div>
     </div>
 
     <div id="side-bar" class="visible flex align-items bg-dark-blue flex-column padding-1" >
