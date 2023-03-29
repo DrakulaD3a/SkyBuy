@@ -31,8 +31,52 @@ body {
 #profile {
   position: absolute;
   top: 1rem;
-  right: 1rem;
+  right: 3rem;
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+
+#profile a {
+  color: var(--color-neon);
+  text-decoration: none;
+}
+
+#profile a:hover {
+  text-decoration: underline;
+}
+
+#logo-hover {
+  position: absolute;
+  display: none;
+  background: var(--color-blue);
+  right: 2rem;
+  width: max-content;
+  padding: 1rem;
+  border-radius: 25px;
+  font-size: 0.8rem;
+}
+
+#logo-butt:hover #logo-hover {
+  display: flex;
+  flex-direction: column;
+}
+
+#menu-hover {
+  display: none;
+  position: absolute;
+  background: var(--color-blue);
+  left: 1.5rem;
+  width: max-content;
+  padding: 1rem;
+  border-radius: 25px;
+  font-size: 0.8rem;
+}
+
+#menu:hover #menu-hover {
+  display: flex;
+  flex-direction: column;
 }
 
 #search-bar {
