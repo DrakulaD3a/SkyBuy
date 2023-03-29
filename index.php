@@ -67,26 +67,25 @@ if (!empty($arr)) {
 
 <body>
 
-  <div id="logo">
-
-    <div id="profile">
-      <div id="logo-butt">
-        <i class="fa-solid fa-user fa-2xl"></i>
-        <div id="logo-hover">
-          <a href="logout.php">Odhlásit se</a>
-          <a href="products.php">Vaše inzeráty</a>
-        </div>
-      </div>
-
-      <div id="menu">
-        <i class="fa-solid fa-ellipsis fa-2xl"></i>
-        <div id="menu-hover">
-          <a href="add.php">Přidat inzerát</a>
-          <a href="index.php">Všechny inzeráty</a>
-        </div>
+  <div id="profile">
+    <div id="logo-butt">
+      <i class="fa-solid fa-user fa-2xl"></i>
+      <div id="logo-hover">
+        <a href="logout.php">Odhlásit se</a>
+        <a href="products.php">Vaše inzeráty</a>
       </div>
     </div>
 
+    <div id="menu">
+      <i class="fa-solid fa-ellipsis fa-2xl"></i>
+      <div id="menu-hover">
+        <a href="add.php">Přidat inzerát</a>
+        <a href="index.php">Všechny inzeráty</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="logo">
     <img src="assets/logo.png" />
   </div>
 
