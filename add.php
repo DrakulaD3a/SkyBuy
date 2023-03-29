@@ -83,7 +83,7 @@ foreach ($categories as $category) {
       <label for="image">Obrázek:</label>
       <input type="file" name="image" id="image" accept="image/*" required>
 
-      <button type="submit">Přidat</button>
+      <button class="margin-top" type="submit">Přidat</button>
       
       <a href="index.php">zpět</a>
     </form>

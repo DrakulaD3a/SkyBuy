@@ -60,7 +60,9 @@ $user = $query->fetch();
         </ul>
         <a id="back-a" href="index.php">zpět</a>
       </div>
-      <img id="img" src="data:image/png;base64,<?= $post['pic'] ?>"/>
-  </div>
+      <div id="img-container">
+        <img id="img" src="data:image/png;base64,<?= $post['pic'] ?>"/>
+      </div>
+    </div>
   </body>
 </html>

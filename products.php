@@ -50,7 +50,7 @@ $db = new PDO(
           <a class="no-text-decoration" href="products.php?sort=data">data</a>
         </div>
       </div>
-
+      
       <div id="profile" class="bg-dark-blue visible">
         <span class="flex justify-content align-items padding-0-2 height-full" >
           Profil
