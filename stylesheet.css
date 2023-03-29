@@ -64,7 +64,7 @@ body {
 }
 
 #main > * {
-  margin: 3rem;
+  margin: 1rem 2rem;
   border-radius: 50px;
 }
 
@@ -79,8 +79,8 @@ body {
   align-self: center;
 }
 
-#categories li {
-  text-transform: capitalize;
+#categories li::first-letter {
+  text-transform: uppercase;
 }
 
 #categories a {
