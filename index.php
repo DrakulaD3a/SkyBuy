@@ -68,6 +68,12 @@ if (!empty($arr)) {
 <body>
 
   <div id="logo">
+
+    <div id="profile">
+      <i class="fa-solid fa-user fa-2xl"></i>
+      <i class="fa-solid fa-grip-dots"></i>
+    </div>
+
     <img src="assets/logo.png" />
   </div>
 
