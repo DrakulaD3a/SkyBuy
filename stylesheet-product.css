@@ -58,3 +58,25 @@ li{
 #product-description-content{
   white-space: pre-wrap;
 }
+
+#search-bar {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-blue);
+  border-radius: 50px;
+  margin: 0 5rem;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+#search-bar > * {
+  border: none;
+  border-radius: 50px;
+  height: 2rem;
+  background: none;
+}

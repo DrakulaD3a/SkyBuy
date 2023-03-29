@@ -43,8 +43,13 @@ $user = $query->fetch();
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="stylesheet.css" />
     <link rel="stylesheet" type="text/css" href="stylesheet-product.css" />
+    <script src="https://kit.fontawesome.com/d9f7f676cb.js" crossorigin="anonymous"></script>
   </head>
   <body>
+    <form id="search-bar">
+      <input type="text" maxlength="32" />
+      <button type="submit"><i class="fa-solid fa-magnifying-glass fa-2xl"></i></button>
+    </form>
     <div id="product-description">
     <div id="product-title">
       <h1 id="product-title-text"><?= $post['title'] ?></h1>
