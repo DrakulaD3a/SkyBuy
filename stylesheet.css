@@ -47,6 +47,10 @@ body {
   text-decoration: underline;
 }
 
+#profile i {
+  margin-bottom: 1rem;
+}
+
 #logo-hover {
   position: absolute;
   display: none;

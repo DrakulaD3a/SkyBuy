@@ -67,6 +67,10 @@ if (!empty($arr)) {
 
 <body>
 
+  <div id="logo">
+    <img src="assets/logo.png" />
+  </div>
+
   <div id="profile">
     <div id="logo-butt">
       <i class="fa-solid fa-user fa-2xl"></i>
@@ -83,10 +87,6 @@ if (!empty($arr)) {
         <a href="index.php">Všechny inzeráty</a>
       </div>
     </div>
-  </div>
-
-  <div id="logo">
-    <img src="assets/logo.png" />
   </div>
 
   <div>
