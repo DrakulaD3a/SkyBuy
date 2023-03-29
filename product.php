@@ -3,25 +3,25 @@
 require_once "config.php";
 
 if (!isset($_GET['id'])) {
-    // TODO: redirect to 404 page
-    echo "Post not found";
-    exit;
+  // TODO: redirect to 404 page
+  echo "Post not found";
+  exit;
 }
 $id = $_GET['id'];
 
 $db = new PDO(
-    "mysql:host=" . DB_HOST . ";dbname=" . DB_USERNAME,
-    DB_USERNAME,
-    DB_PASSWORD
+  "mysql:host=" . DB_HOST . ";dbname=" . DB_USERNAME,
+  DB_USERNAME,
+  DB_PASSWORD
 );
 
 $query = $db->prepare("SELECT * FROM `posts` WHERE `id` = ?");
 $query->execute([$id]);
 
 if ($query->rowCount() == 0) {
-    // TODO: redirect to 404 page
-    echo "Post not found";
-    exit;
+  // TODO: redirect to 404 page
+  echo "Post not found";
+  exit;
 }
 
 $post = $query->fetch();
@@ -64,5 +64,7 @@ $user = $query->fetch();
     <div id="img-container">
       <img id="img" src="data:image/png;base64,<?= $post['pic'] ?>"/>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
