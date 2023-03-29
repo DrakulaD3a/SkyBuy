@@ -41,28 +41,28 @@ $user = $query->fetch();
     <meta charset="UTF-8">
     <title>Bazoš</title>
     <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheet-product.css" />
   </head>
   <body>
-    <div id="container">
-      <div id="product-title">
-        <h1 id="product-title-text"><?= $post['title'] ?></h1>
-      </div>
-      <div id="product-description">
-        <ul>
-          <li><strong>přidáno:</strong>  <?= date("d.m.Y", strtotime($post['date'])) ?> <strong>uživatelem</strong> <?= $user["username"]?></li>
-          <br>
-          <li><strong>cena:</strong>  <?= $post['price']?> Kč</li>
-          <br>
-          <li><strong>kontakt:</strong>  <?= $post['contact']?></li>
-          <br>
-          <li><strong>popis:</strong></li>
-          <div id="product-description-content"><?=$post['description']?></div>
-        </ul>
-        <a id="back-a" href="index.php">zpět</a>
-      </div>
-      <div id="img-container">
-        <img id="img" src="data:image/png;base64,<?= $post['pic'] ?>"/>
-      </div>
+    <div id="product-description">
+    <div id="product-title">
+      <h1 id="product-title-text"><?= $post['title'] ?></h1>
+    </div>
+      <ul>
+        <li><strong>přidáno:</strong>  <?= date("d.m.Y", strtotime($post['date'])) ?> <strong>uživatelem</strong> <?= $user["username"]?></li>
+        <br>
+        <li><strong>kontakt:</strong>  <?= $post['contact']?></li>
+        <br>
+        <li><strong>popis:</strong></li>
+        <div id="product-description-content"><?=$post['description']?></div>
+      </ul>
+      <a id="back-a" href="index.php">zpět</a>
+    </div>
+    <div id="price">
+      <?= $post['price']?> Kč
+    </div>
+    <div id="img-container">
+      <img id="img" src="data:image/png;base64,<?= $post['pic'] ?>"/>
     </div>
   </body>
 </html>
