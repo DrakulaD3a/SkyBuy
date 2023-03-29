@@ -1,17 +1,31 @@
 :root {
-  --color-black: #00040d;
-  --color-dark-blue: #3850ba;
-  --color-light-blue: #adddf5;
-  --color-white: #ffffff;
-  --color-red: #fa0000;
-
-  --color-black: #080808;
+  --color-black: #202020;
   --color-blue: #002695;
   --color-neon: #affbff;
+  --color-red: #fa0000;
+  --color-white: #ffffff;
 }
 
-#categories li {
-  text-transform: capitalize;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-black);
+  font-size: 20px;
+  color: var(--color-neon);
+}
+
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+#logo img {
+  width: 10rem;
+  height: 10rem;
 }
 
 #search-bar {
@@ -19,19 +33,82 @@
   justify-content: center;
   align-items: center;
   background-color: var(--color-blue);
-  padding: 1rem;
   border-radius: 50px;
+  margin: 0 5rem;
+  padding: 1rem;
   gap: 1rem;
 }
 
-#search-bar input {
+#search-bar > * {
   border: none;
   border-radius: 50px;
+  height: 2rem;
+  background: none;
+}
+
+#search-bar i {
+  color: var(--color-neon);
+  cursor: pointer;
+}
+
+/* TODO: Outline ??? */
+#search-bar input {
+  width: 60%;
+  background-color: var(--color-neon);
+  padding: 0 0.5rem;
+}
+
+#main {
+  display: grid;
+  grid: auto / 1fr 50rem 1fr;
+}
+
+#main > * {
+  margin: 1rem 2rem;
+  border-radius: 50px;
+}
+
+#categories {
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-blue);
+}
+
+#categories h3 {
+  align-self: center;
+}
+
+#categories li::first-letter {
+  text-transform: uppercase;
+}
+
+#categories a {
+  text-decoration: none;
+  color: var(--color-neon);
+}
+
+#categories a:hover {
+  text-decoration: underline;
+}
+
+#products {
+  grid-area: 1 / 2;
   background-color: var(--color-neon);
 }
 
-#search-bar button {
-  border: none;
-  border-radius: 50px;
-  background-color: var(--color-neon);
+#products img {
+  width: 100%;
+  height: 80%;
+}
+
+#filters {
+  grid-area: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-blue);
+}
+
+#filters h3 {
+  align-self: center;
 }
