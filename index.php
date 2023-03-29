@@ -71,7 +71,7 @@ if (!empty($arr)) {
 
     <div id="profile">
       <i class="fa-solid fa-user fa-2xl"></i>
-      <i class="fa-solid fa-grip-dots"></i>
+      <i class="fa-solid fa-ellipsis fa-2xl"></i>
     </div>
 
     <img src="assets/logo.png" />
