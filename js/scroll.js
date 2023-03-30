@@ -6,10 +6,8 @@ window.addEventListener("scroll", () => {
   console.log(scrollPosition);
   if (scrollPosition > convertRemToPixels((12 + 4) / 2)) {
     search_bar2.classList.add("show");
-    categories.classList.add("fixed");
   } else {
     search_bar2.classList.remove("show");
-    categories.classList.remove("fixed");
   }
 });
 

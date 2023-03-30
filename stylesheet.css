@@ -131,10 +131,6 @@ ul{
   display: initial;
 }
 
-.fixed {
-  position: fixed;
-}
-
 #main {
   display: grid;
   grid: auto / 1fr 50rem 1fr;
