@@ -86,6 +86,7 @@ li{
 
 #search-bar input{
   width: 100%;
+  white-space: normal;
 }
 
 #back-div{
@@ -96,10 +97,10 @@ li{
 }
 
 #back-a{
-
   text-decoration: none;
   background-color: var(--color-neon);
   color: var(--color-blue);
   padding: 0.5rem;
   border-radius: 1rem;
+  margin-bottom: 1rem;
 }

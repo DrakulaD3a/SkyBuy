@@ -47,7 +47,7 @@ $user = $query->fetch();
   </head>
   <body>
     <form id="search-bar" action="index.php">
-      <input type="text" name="search" maxlength="32" placeholder="<?=$post["title"]?>" value="<?=$_GET["search"]?>"/>
+      <input type="text" name="search" maxlength="50" placeholder="<?=trim($post["title"])?>" value="<?=$_GET["search"]?>"/>
       <button type="submit"><i class="fa-solid fa-magnifying-glass fa-2xl"></i></button>
     </form>
     <div id="product-description">
