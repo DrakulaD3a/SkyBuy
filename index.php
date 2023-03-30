@@ -76,7 +76,7 @@ if (!empty($arr)) {
     <div id="logo-butt">
       <i class="fa-solid fa-user fa-2xl"></i>
       <div id="logo-hover">
-        <div id="name"><?=$_SESSION["username"]?></div>
+        <div id="name"><?= $_SESSION["username"] ?></div>
         <a href="logout.php">Odhlásit se</a>
         <a href="add.php">Přidat inzerát</a>
       </div>
@@ -93,7 +93,7 @@ if (!empty($arr)) {
 
   <div>
     <form id="search-bar">
-      <input type="text" maxlength="50" name="search" placeholder="audi TT" value="<?= $_GET["search"] ?>" />
+      <input type="text" maxlength="50" name="search" placeholder="Audi TT" value="<?= $_GET["search"] ?>" />
       <button type="submit"><i class="fa-solid fa-magnifying-glass fa-2xl"></i></button>
     </form>
   </div>
@@ -123,24 +123,24 @@ if (!empty($arr)) {
       </div>
     </div>
 
+    <div id="filters">
+      <h3>Další filtry</h3>
+    </div>
+
     <div id="products">
       <?php
       $objects = $query->fetchAll();
 
       foreach ($objects as $object) { ?>
-        <a href="product.php?id=<?= $object["id"] ?>&search=<?= $_GET["search"] ?>">
+        <a href="product.php?id=<?= $object["id"] ?>&search=<?= $_GET["search"] ?>" class="post">
           <img src="data:image/png;base64,<?= $object["pic"] ?>" />
           <h3><?= $object["title"] ?></h3>
-          <br>
           <h4><?= $object["price"] ?> Kč</h4>
           <p><?= strlen($object["description"]) > 500 ? substr($object["description"], 0, 500) . "..." : $object["description"] ?></p>
         </a>
       <?php
       } ?>
-    </div>
 
-    <div id="filters">
-      <h3>Další filtry</h3>
     </div>
 
   </main>
