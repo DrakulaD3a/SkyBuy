@@ -15,7 +15,7 @@ html,body{
 }
 
 img{
-  width: calc(50vw - 3rem);
+  width: calc(50vw - 5rem);
 }
 
 li{
@@ -27,7 +27,6 @@ li{
   grid-row-end: 4;
   grid-column-start: 4;
   grid-column-end: 5;
-  overflow: visible;
 }
 
 #price{
@@ -42,9 +41,11 @@ li{
 
 #product-title{
   text-decoration: underline;
-  text-decoration-thickness: 3px;
-  text-underline-offset: 5px ;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 7px ;
   margin-bottom: 2rem;
+  font-size: 50px;
+  font-weight: bold;
 }
 
 #product-description{
@@ -57,6 +58,8 @@ li{
 
 #product-description-content{
   white-space: pre-wrap;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
 }
 
 #search-bar {
@@ -70,7 +73,7 @@ li{
   background-color: var(--color-blue);
   border-radius: 50px;
   margin: 0;
-  padding: 1rem;
+  padding: 0;
   gap: 1rem;
 }
 
@@ -83,4 +86,20 @@ li{
 
 #search-bar input{
   width: 100%;
+}
+
+#back-div{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  display: flex;
+  justify-content: center;
+}
+
+#back-a{
+
+  text-decoration: none;
+  background-color: var(--color-neon);
+  color: var(--color-blue);
+  padding: 0.5rem;
+  border-radius: 1rem;
 }

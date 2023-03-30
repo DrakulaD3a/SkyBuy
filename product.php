@@ -47,20 +47,22 @@ $user = $query->fetch();
   </head>
   <body>
     <form id="search-bar" action="index.php">
-      <input type="text" name="search" maxlength="32" value="<?=$_GET["search"]?>"/>
+      <input type="text" name="search" maxlength="32" placeholder="<?=$post["title"]?>" value="<?=$_GET["search"]?>"/>
       <button type="submit"><i class="fa-solid fa-magnifying-glass fa-2xl"></i></button>
     </form>
     <div id="product-description">
     <div id="product-title">
-      <h1 id="product-title-text"><?= $post['title'] ?></h1>
+      <div id="product-title-text"><?= $post['title'] ?></div>
     </div>
-      <ul>
-        <li><strong>přidáno:</strong>  <?= date("d.m.Y", strtotime($post['date'])) ?> <strong>uživatelem</strong> <?= $user["username"]?></li>
-        <li><strong>kontakt:</strong>  <?= $post['contact']?></li>
-        <li><strong>popis:</strong></li>
-        <div id="product-description-content">   <?=$post['description']?></div>
-      </ul>
+    <ul>
+      <li><strong>přidáno:</strong>  <?= date("d.m.Y", strtotime($post['date'])) ?> <strong>uživatelem</strong> <?= $user["username"]?></li>
+      <li><strong>kontakt:</strong>  <?= $post['contact']?></li>
+      <li><strong>popis:</strong></li>
+      <div id="product-description-content"><?=$post['description']?></div>
+    </ul>
+    <div id="back-div">
       <a id="back-a" href="index.php">zpět</a>
+    </div>
     </div>
     <div id="price">
       <?= $post['price']?> Kč
