@@ -28,6 +28,7 @@ $db = new PDO(
   <meta charset="UTF-8" />
   <title>Bazoš - registrace</title>
   <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheet-login.css" />
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
   <script src="js/snackbar.js"></script>
 </head>
@@ -37,7 +38,7 @@ $db = new PDO(
   <div class="snackbar"></div>
 
   <?php
-  if (isset($_POST)) {
+  if (!empty($_POST)) {
     [
       "username" => $username,
       "password" => $password,
