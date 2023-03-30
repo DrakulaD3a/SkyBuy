@@ -150,6 +150,7 @@ ul{
   display: flex;
   flex-direction: column;
   background-color: var(--color-blue);
+  height: 62vh;
 }
 
 #categories h3 {
@@ -188,6 +189,7 @@ ul{
   display: flex;
   flex-direction: column;
   background-color: var(--color-blue);
+  height: 62vh;
 }
 
 #filters h3 {
