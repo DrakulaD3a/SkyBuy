@@ -92,7 +92,7 @@ if (!empty($arr)) {
 
   <div>
     <form id="search-bar">
-      <input type="text" maxlength="32" name="search" value="<?=$_GET["search"]?>"/>
+      <input type="text" maxlength="32" name="search" value="<?= $_GET["search"] ?>" />
       <button type="submit"><i class="fa-solid fa-magnifying-glass fa-2xl"></i></button>
     </form>
   </div>
@@ -125,7 +125,7 @@ if (!empty($arr)) {
       $objects = $query->fetchAll();
 
       foreach ($objects as $object) { ?>
-        <a href="product.php?id=<?= $object["id"] ?>&search=<?=$_GET["search"]?>">
+        <a href="product.php?id=<?= $object["id"] ?>&search=<?= $_GET["search"] ?>">
           <img src="data:image/png;base64,<?= $object["pic"] ?>" />
           <h3><?= $object["title"] ?></h3>
           <br>
