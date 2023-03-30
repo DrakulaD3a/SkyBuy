@@ -61,7 +61,7 @@ $user = $query->fetch();
       <div id="product-description-content"><?=$post['description']?></div>
     </ul>
     <div id="back-div">
-      <a id="back-a" href="index.php">zpět</a>
+      <a id="back-a" href="index.php?search=<?=$_GET["search"]?>">zpět</a>
     </div>
     </div>
     <div id="price">

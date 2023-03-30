@@ -92,7 +92,7 @@ if (!empty($arr)) {
 
   <div>
     <form id="search-bar">
-      <input type="text" maxlength="50" name="search" value="<?= $_GET["search"] ?>" />
+      <input type="text" maxlength="50" name="search" placeholder="audi TT" value="<?= $_GET["search"] ?>" />
       <button type="submit"><i class="fa-solid fa-magnifying-glass fa-2xl"></i></button>
     </form>
   </div>
