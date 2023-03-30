@@ -113,6 +113,24 @@ body {
   padding: 0 0.5rem;
 }
 
+#search-bar2 {
+  width: 60%;
+  background-color: var(--color-neon);
+  padding: 0 0.5rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: initial;
+}
+
+.fixed {
+  position: fixed;
+}
+
 #main {
   display: grid;
   grid: auto / 1fr 50rem 1fr;

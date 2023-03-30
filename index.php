@@ -63,6 +63,7 @@ if (!empty($arr)) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Online bazar pro každého">
   <script src="https://kit.fontawesome.com/d9f7f676cb.js" crossorigin="anonymous"></script>
+  <script defer src="js/scroll.js"></script>
 </head>
 
 <body>
@@ -91,7 +92,7 @@ if (!empty($arr)) {
 
   <div>
     <form id="search-bar">
-      <input type="text" maxlength="32" />
+      <input type="text" maxlength="32" name="search" />
       <button type="submit"><i class="fa-solid fa-magnifying-glass fa-2xl"></i></button>
     </form>
   </div>
@@ -99,6 +100,12 @@ if (!empty($arr)) {
   <main id="main">
 
     <div id="categories">
+      <div id="search-bar2" class="hidden">
+        <form>
+          <input type="text" maxlength="32" name="search" />
+          <button type="submit"><i class="fa-solid fa-magnifying-glass fa-xl"></i>
+        </form>
+      </div>
       <h3>Kategorie</h3>
       <ul>
         <li><a href="index.php">vše</a></li>
