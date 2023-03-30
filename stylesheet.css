@@ -94,7 +94,7 @@ ul{
   background-color: var(--color-blue);
   border-radius: 50px;
   margin: 0 5rem;
-  padding: 1rem;
+  padding: 0.5rem;
   gap: 1rem;
 }
 
@@ -115,6 +115,8 @@ ul{
   width: 60%;
   background-color: var(--color-neon);
   padding: 0 0.5rem;
+  height: 2.5rem;
+  font-size: 1.2rem;
 }
 
 #search-bar2 {

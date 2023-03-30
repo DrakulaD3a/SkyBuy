@@ -46,8 +46,8 @@ $user = $query->fetch();
     <script src="https://kit.fontawesome.com/d9f7f676cb.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <form id="search-bar">
-      <input type="text" maxlength="32" />
+    <form id="search-bar" action="index.php">
+      <input type="text" name="search" maxlength="32" value="<?=$_GET["search"]?>"/>
       <button type="submit"><i class="fa-solid fa-magnifying-glass fa-2xl"></i></button>
     </form>
     <div id="product-description">
