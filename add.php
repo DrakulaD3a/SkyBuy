@@ -46,7 +46,7 @@ if (isset($_POST["title"])) {
   <title>Bazoš - nový inzerát</title>
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-  <link rel="stylesheet" type="text/css" href="stylesheet-login.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheet-forms.css" />
   <script src="js/snackbar.js"></script>
 </head>
 
