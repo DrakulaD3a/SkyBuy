@@ -28,7 +28,7 @@ $db = new PDO(
   <meta charset="UTF-8" />
   <title>Bazoš - registrace</title>
   <link rel="stylesheet" type="text/css" href="stylesheet.css" />
-  <link rel="stylesheet" type="text/css" href="stylesheet-login.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheet-forms.css" />
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
   <script src="js/snackbar.js"></script>
 </head>
