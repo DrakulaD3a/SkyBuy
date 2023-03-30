@@ -124,7 +124,25 @@ if (!empty($arr)) {
     </div>
 
     <div id="filters">
-      <h3>Další filtry</h3>
+      <img src="assets/logo.png" id="filters-logo" class="hidden" />
+      <div id="filters-inside">
+        <h3>Další filtry</h3>
+        <h5>Filtrovat:</h5>
+        <form>
+          <div>
+            <label for="min">Cena od:</label>
+            <input type="number" name="min" id="min" />
+            <label for="max">do:</label>
+            <input type="number" name="max" id="max" />
+          </div>
+          <button type="submit">Vyhledat</button>
+        </form>
+        <h5>Řadit podle:</h5>
+        <ul>
+          <li><a href="index.php?sort=price">Cena</a></li>
+          <li><a href="index.php?sort=date">Datum</a></li>
+        </ul>
+      </div>
     </div>
 
     <div id="products">
