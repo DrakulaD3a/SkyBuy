@@ -27,6 +27,7 @@ $db = new PDO(
   <meta charset="UTF-8" />
   <title>Bazoš - přihlášení</title>
   <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheet-login.css" />
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
   <script src="js/snackbar.js"></script>
 </head>
@@ -56,7 +57,7 @@ $db = new PDO(
     }
   }
   ?>
-  <form method="post" class="main-form flex flex-column align-items justify-content gap-half bg-light-blue">
+  <form method="post">
 
     <label for="username">Uživatelské jméno</label>
     <input name="username" id="username" required />
