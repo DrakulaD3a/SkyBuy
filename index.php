@@ -99,25 +99,27 @@ if (!empty($arr)) {
 
   <main id="main">
 
-    <div id="categories">
+    <div id="categories-wrapper">
       <div id="search-bar2" class="hidden">
         <form>
+          <button type="submit"><i class="fa-solid fa-magnifying-glass fa-xl"></i></button>
           <input type="text" maxlength="32" name="search" />
-          <button type="submit"><i class="fa-solid fa-magnifying-glass fa-xl"></i>
         </form>
       </div>
-      <h3>Kategorie</h3>
-      <ul>
-        <li><a href="index.php">vše</a></li>
-        <?php
-        $catQuery = $db->query('SELECT * FROM categories;');
-        $categories = $catQuery->fetchAll();
+      <div id="categories">
+        <h3>Kategorie</h3>
+        <ul>
+          <li><a href="index.php">vše</a></li>
+          <?php
+          $catQuery = $db->query('SELECT * FROM categories;');
+          $categories = $catQuery->fetchAll();
 
-        foreach ($categories as $category) { ?>
-          <li><a href="index.php?category=<?= $category["id"] ?>" class=""><?= $category["name"] ?></a></li>
-        <?php
-        } ?>
-      </ul>
+          foreach ($categories as $category) { ?>
+            <li><a href="index.php?category=<?= $category["id"] ?>" class=""><?= $category["name"] ?></a></li>
+          <?php
+          } ?>
+        </ul>
+      </div>
     </div>
 
     <div id="products">
