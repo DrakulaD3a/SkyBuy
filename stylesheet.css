@@ -269,6 +269,11 @@ ul {
   align-self: center;
 }
 
+#filters-logo {
+  width: 50%;
+  height: 50%;
+}
+
 #filters a {
   text-decoration: none;
   color: var(--color-neon);
