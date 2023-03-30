@@ -1,14 +1,25 @@
+const search_bar = document.getElementById("search-bar");
 const search_bar2 = document.getElementById("search-bar2");
-const categories = document.getElementById("categories");
+const categories_wrapper = document.getElementById("categories-wrapper");
+const filters = document.getElementById("filters");
 
 window.addEventListener("scroll", () => {
-  scrollPosition = window.scrollY;
-  console.log(scrollPosition);
-  if (scrollPosition > convertRemToPixels((12 + 4) / 2)) {
+  let marginTop;
+
+  if (scrollY >= convertRemToPixels((12 + 4) / 2)) {
+    marginTop = scrollY - convertRemToPixels((12 + 4) / 2);
+
+    search_bar.classList.add("hide");
     search_bar2.classList.add("show");
   } else {
+    marginTop = convertRemToPixels(1);
+
+    search_bar.classList.remove("hide");
     search_bar2.classList.remove("show");
   }
+
+  categories_wrapper.style.marginTop = `${marginTop}px`;
+  filters.style.marginTop = `${marginTop <= convertRemToPixels(1) ? marginTop : marginTop + convertRemToPixels(4)}px`;
 });
 
 function convertRemToPixels(rem) {
