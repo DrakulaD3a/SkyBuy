@@ -76,6 +76,7 @@ if (!empty($arr)) {
     <div id="logo-butt">
       <i class="fa-solid fa-user fa-2xl"></i>
       <div id="logo-hover">
+        <div id="name"><?=$_SESSION["username"]?></div>
         <a href="logout.php">Odhlásit se</a>
         <a href="add.php">Přidat inzerát</a>
       </div>

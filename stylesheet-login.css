@@ -20,10 +20,12 @@ input[type="number"] {
 }
 
 input {
+  padding: 0 0.5rem;
   border-radius: 1rem;
   background-color: var(--color-neon);
   border: none;
   color: black;
+  font-size: medium;
   height: 1.5rem;
   margin: 0;
   width: 15rem;
