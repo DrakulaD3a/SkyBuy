@@ -14,10 +14,6 @@ html,body{
   background-color: var(--color-blue);
 }
 
-img{
-  /*width: calc(50vw - 5rem);*/
-}
-
 li{
   margin-bottom: 0.5rem;
 }
