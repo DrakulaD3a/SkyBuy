@@ -231,7 +231,7 @@ ul {
 
 .post {
   display: grid;
-  grid: 20% calc(10% - 1rem) calc(69% - 1rem) calc(1% - 1rem) / 1fr 1fr;
+  grid: 20% calc(10% - 1rem) calc(70% - 1rem) / 1fr 1fr;
   height: 50vh;
   gap: 1rem;
   max-width: 80%;
@@ -256,7 +256,8 @@ ul {
 }
 
 .delete-btn {
-  grid-area: 4 / 1;
+  position: relative;
+  bottom: 3rem;
   align-self: center;
   justify-self: center;
   text-decoration: none;
