@@ -4,13 +4,15 @@ const search_bar2 = document.getElementById("search-bar2");
 const categories_wrapper = document.getElementById("categories-wrapper");
 const categories = document.getElementById("categories");
 const filters = document.getElementById("filters");
-const logo_wrapper_wrapper = document.getElementById("filters-logo-wrapper-wrapper");
+const logo_wrapper_wrapper = document.getElementById(
+  "filters-logo-wrapper-wrapper"
+);
 const filters_inside = document.getElementById("filters-inside");
 
 let rect = categories.getBoundingClientRect();
-categories.style.height = `calc(100vh - ${rect.top}px - 1rem)`;
+categories.style.height = `calc(100vh - ${rect.top + window.scrollY}px - 1rem)`;
 rect = filters.getBoundingClientRect();
-filters.style.height = `calc(100vh - ${rect.top}px - 1rem)`;
+filters.style.height = `calc(100vh - ${rect.top + window.scrollY}px - 1rem)`;
 
 window.addEventListener("scroll", () => {
   let marginTop;
@@ -34,7 +36,10 @@ window.addEventListener("scroll", () => {
   }
 
   categories_wrapper.style.marginTop = `${marginTop}px`;
-  filters.style.marginTop = `${marginTop <= convertRemToPixels(1) ? marginTop : marginTop + convertRemToPixels(4.5)}px`;
+  filters.style.marginTop = `${marginTop <= convertRemToPixels(1)
+      ? marginTop
+      : marginTop + convertRemToPixels(4.5)
+    }px`;
 });
 
 function convertRemToPixels(rem) {

@@ -6,7 +6,7 @@
 }
 
 ::-webkit-scrollbar {
-  visibility: hidden;
+  display: none;
 }
 
 html {
@@ -257,6 +257,7 @@ ul {
 
 .post p {
   grid-area: 3 / 2;
+  overflow: hidden;
 }
 
 .post p::first-letter {
