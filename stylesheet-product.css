@@ -6,6 +6,10 @@
   --color-white: #ffffff;
 }
 
+html {
+  background-color: var(--color-blue);
+}
+
 body {
   display: grid;
   grid-template-rows: 3rem 5rem calc(100vh - 11rem) 3rem;
