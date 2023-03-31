@@ -44,7 +44,6 @@ if (isset($_POST["title"])) {
 <head>
   <meta charset="UTF-8">
   <title>Sky Buy - nový inzerát</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Online bazar pro každého">
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
