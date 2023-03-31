@@ -240,6 +240,7 @@ ul {
   background-color: var(--color-neon);
   border: 0.5rem solid var(--color-blue);
   border-radius: 1rem;
+  padding-right: 2rem;
 }
 
 .post * {
