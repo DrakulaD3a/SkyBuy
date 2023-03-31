@@ -230,7 +230,7 @@ ul {
 
 .post {
   display: grid;
-  grid: 10vh 5vh 30vh / 1fr 1fr;
+  grid: 10vh 5vh 35vh / 1fr 1fr;
   gap: 1rem;
   max-width: 50vw;
   margin: 2rem 3rem;
@@ -268,7 +268,8 @@ ul {
 .post p {
   grid-area: 3 / 2;
   overflow: hidden;
-  mask-image: linear-gradient(180deg, #000 60%, transparent);
+  mask-image: linear-gradient(180deg, #000 70%, transparent);
+  margin-bottom: 1rem;
 }
 
 .post p::first-letter {
