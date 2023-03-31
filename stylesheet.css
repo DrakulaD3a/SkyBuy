@@ -5,6 +5,15 @@
   --color-white: #ffffff;
 }
 
+::-webkit-scrollbar {
+  visibility: hidden;
+}
+
+html {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 input[type="number"] {
   appearance: textfield;
 }
@@ -150,6 +159,7 @@ ul {
   flex-direction: column;
   background-color: var(--color-blue);
   border-radius: 50px;
+  overflow-y: scroll;
 }
 
 #categories h3 {
@@ -216,7 +226,6 @@ ul {
 #products {
   grid-area: 1 / 2;
   background-color: var(--color-neon);
-  overflow-y: scroll;
 }
 
 .post {
