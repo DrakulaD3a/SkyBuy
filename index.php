@@ -133,7 +133,7 @@ if (!empty($arr)) {
       <div id="filters-inside">
         <h3>Další filtry</h3>
         <h5>Filtrovat:</h5>
-        <form>
+        <form method="post">
           <div>
             <label for="min">Cena od:</label>
             <input type="number" name="min" id="min" />
