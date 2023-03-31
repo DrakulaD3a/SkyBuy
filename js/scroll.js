@@ -13,8 +13,36 @@ categories.style.height = `calc(100vh - ${rect.top + window.scrollY}px - 1rem)`;
 rect = filters.getBoundingClientRect();
 filters.style.height = `calc(100vh - ${rect.top + window.scrollY}px - 1rem)`;
 
+if (screen.width > 1100) {
+  let marginTop;
+
+  if (scrollY >= convertRemToPixels((12 + 4) / 2)) {
+    marginTop = scrollY - convertRemToPixels((12 + 4) / 2);
+
+    search_bar.style.display = "none";
+    filters_inside.style.display = "none";
+
+    search_bar2.classList.remove("hidden");
+    logo_wrapper_wrapper.classList.remove("hidden");
+  } else {
+    marginTop = convertRemToPixels(1);
+
+    search_bar.style.display = "flex";
+    filters_inside.style.display = "flex";
+
+    search_bar2.classList.add("hidden");
+    logo_wrapper_wrapper.classList.add("hidden");
+  }
+
+  categories_wrapper.style.marginTop = `${marginTop}px`;
+  filters.style.marginTop = `${marginTop <= convertRemToPixels(1)
+      ? marginTop
+      : marginTop + convertRemToPixels(4.5)
+    }px`;
+}
+
 window.addEventListener("scroll", () => {
-  if (screen.width > 1200) {
+  if (screen.width > 1100) {
     let marginTop;
 
     if (scrollY >= convertRemToPixels((12 + 4) / 2)) {
