@@ -26,7 +26,9 @@ $db = new PDO(
 
 <head>
   <meta charset="UTF-8" />
-  <title>Bazoš - registrace</title>
+  <title>Sky Buy - registrace</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Online bazar pro každého">
   <link rel="stylesheet" type="text/css" href="stylesheet.css" />
   <link rel="stylesheet" type="text/css" href="stylesheet-forms.css" />
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />

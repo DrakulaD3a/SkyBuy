@@ -25,11 +25,11 @@ $db = new PDO(
 
 <head>
   <meta charset="UTF-8" />
-  <title>Bazoš</title>
-  <link rel="stylesheet" type="text/css" href="stylesheet.css" />
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <title>Sky Buy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Online bazar pro každého">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 </head>
 
 <body id="main-body">

@@ -34,43 +34,46 @@ $user = $query->fetch();
 
 ?>
 
-<!-- TODO: Create this page -->
 <!DOCTYPE html>
 <html lang="cz">
-  <head>
-    <meta charset="UTF-8">
-    <title>Sky-buy</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
-    <link rel="stylesheet" type="text/css" href="stylesheet-product.css" />
-    <script src="https://kit.fontawesome.com/d9f7f676cb.js" crossorigin="anonymous"></script>
-    <script defer src="js/img-size-prdct-page.js"></script>
-  </head>
-  <body>
-    <form id="search-bar" action="index.php">
-      <input type="text" name="search" maxlength="50" placeholder="<?=trim($post["title"])?>" value="<?=$_GET["search"]?>"/>
-      <button type="submit"><i class="fa-solid fa-magnifying-glass fa-2xl"></i></button>
-    </form>
-    <div id="product-description">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sky-buy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Online bazar pro každého">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheet-product.css" />
+  <script src="https://kit.fontawesome.com/d9f7f676cb.js" crossorigin="anonymous"></script>
+  <script defer src="js/img-size-prdct-page.js"></script>
+</head>
+
+<body>
+  <form id="search-bar" action="index.php">
+    <input type="text" name="search" maxlength="50" placeholder="<?= trim($post["title"]) ?>" value="<?= $_GET["search"] ?>" />
+    <button type="submit"><i class="fa-solid fa-magnifying-glass fa-2xl"></i></button>
+  </form>
+  <div id="product-description">
     <div id="product-title">
       <div id="product-title-text"><?= $post['title'] ?></div>
     </div>
     <ul>
-      <li><strong>přidáno:</strong>  <?= date("d.m.Y", strtotime($post['date'])) ?> <strong>uživatelem</strong> <?= $user["username"]?></li>
-      <li><strong>kontakt:</strong>  <?= $post['contact']?></li>
+      <li><strong>přidáno:</strong> <?= date("d.m.Y", strtotime($post['date'])) ?> <strong>uživatelem</strong> <?= $user["username"] ?></li>
+      <li><strong>kontakt:</strong> <?= $post['contact'] ?></li>
       <li><strong>popis:</strong></li>
-      <div id="product-description-content"><?=$post['description']?></div>
+      <div id="product-description-content"><?= $post['description'] ?></div>
     </ul>
     <div id="back-div">
-      <a id="back-a" href="index.php?search=<?=$_GET["search"]?>">zpět</a>
+      <a id="back-a" href="index.php?search=<?= $_GET["search"] ?>">zpět</a>
     </div>
-    </div>
-    <div id="price">
-      <?= $post['price']?> Kč
-    </div>
-    <div id="img-container">
-      <img id="img" src="data:image/png;base64,<?= $post['pic'] ?>"/>
-    </div>
+  </div>
+  <div id="price">
+    <?= $post['price'] ?> Kč
+  </div>
+  <div id="img-container">
+    <img id="img" src="data:image/png;base64,<?= $post['pic'] ?>" />
+  </div>
   </div>
 </body>
 

@@ -65,7 +65,7 @@ ul {
 
 #name {
   margin-bottom: 0.5rem;
-  font-size: 18px;
+  font-size: 1.1em;
   font-weight: bold;
   text-transform: capitalize;
 }
@@ -306,6 +306,7 @@ ul {
 
 #filters-logo-wrapper {
   display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
   align-items: center;
@@ -388,6 +389,10 @@ ul {
 }
 
 @media (min-width: 2400px) {
+  html {
+    font-size: 24px;
+  }
+
   .post {
     gap: 0;
   }

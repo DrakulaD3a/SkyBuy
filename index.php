@@ -57,11 +57,11 @@ if (!empty($arr)) {
 
 <head>
   <meta charset="UTF-8" />
-  <title>Sky-Buy</title>
-  <link rel="stylesheet" type="text/css" href="stylesheet.css" />
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <title>Sky Buy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Online bazar pro každého">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
   <script src="https://kit.fontawesome.com/d9f7f676cb.js" crossorigin="anonymous"></script>
   <script defer src="js/scroll.js"></script>
   <script defer src="js/img-size.js"></script>
@@ -128,6 +128,7 @@ if (!empty($arr)) {
       <div id="filters-logo-wrapper-wrapper" class="hidden">
         <div id="filters-logo-wrapper">
           <img src="assets/logo.png" id="filters-logo" />
+          <h2>Sky Buy</h2>
         </div>
       </div>
       <div id="filters-inside">
