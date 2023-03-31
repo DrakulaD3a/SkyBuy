@@ -229,9 +229,9 @@ ul {
 
 .post {
   display: grid;
-  grid: 10vh 5vh 35vh / 1fr 1fr;
+  grid: 20% 10% 70% / 1fr 1fr;
   gap: 1rem;
-  max-width: 50vw;
+  max-width: 80%;
   margin: 2rem 3rem;
   text-decoration: none;
   background-color: var(--color-neon);
@@ -246,6 +246,8 @@ ul {
 
 .post > img {
   grid-area: 1 / 1 / span 3;
+  max-width: 80%;
+  max-height: 80%;
   align-self: center;
   justify-self: center;
 }
@@ -347,11 +349,39 @@ ul {
   padding: 0.2rem;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1200px) {
   #main {
     grid: auto / 100%;
   }
+
   #products {
     grid-area: 1 / 1;
+  }
+
+  .post {
+    grid: 50% 10% 5% 35% / auto;
+    margin: 1rem;
+  }
+
+  .post > img {
+    grid-area: 1 / 1;
+  }
+
+  .post h3 {
+    grid-area: 2 / 1;
+    margin-top: 0.5rem;
+  }
+
+  .post h4 {
+    grid-area: 3 / 1;
+  }
+
+  .post p {
+    grid-area: 4 / 1;
+  }
+
+  #logo {
+    justify-content: flex-start;
+    align-items: center;
   }
 }
