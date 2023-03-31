@@ -385,3 +385,9 @@ ul {
     align-items: center;
   }
 }
+
+@media (min-width: 2400px) {
+  .post {
+    gap: 0;
+  }
+}

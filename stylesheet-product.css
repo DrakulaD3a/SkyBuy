@@ -6,7 +6,6 @@
   --color-white: #ffffff;
 }
 
-html,
 body {
   display: grid;
   grid-template-rows: 3rem 5rem calc(100vh - 11rem) 3rem;
@@ -103,4 +102,12 @@ li {
   padding: 0.5rem;
   border-radius: 1rem;
   margin-bottom: 1rem;
+}
+
+@media (max-width: 1200px) {
+  body {
+    grid-template-rows: 3rem 5rem calc(60vh - 11rem) 3rem 40vh;
+    grid-template-columns: 3rem calc(50vw - 5rem) 4rem calc(50vw - 5rem) 3rem;
+    background-color: var(--color-blue);
+  }
 }
