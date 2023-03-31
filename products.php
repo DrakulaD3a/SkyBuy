@@ -37,10 +37,10 @@ if (!empty($_GET["category"])) {
   array_push($arr, $_GET["category"]);
 }
 if (!empty($_POST["min"])) {
-  $qry .= "AND price > " . $_POST["min"] . " ";
+  $qry .= "AND price >= " . $_POST["min"] . " ";
 }
 if (!empty($_POST["max"])) {
-  $qry .= "AND price < " . $_POST["max"] . " ";
+  $qry .= "AND price <= " . $_POST["max"] . " ";
 }
 
 $qry .= "ORDER BY ";
