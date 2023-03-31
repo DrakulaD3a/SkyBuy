@@ -145,6 +145,7 @@ if (!empty($arr)) {
         <ul>
           <li><a href="index.php?sort=price">Cena</a></li>
           <li><a href="index.php?sort=date">Datum</a></li>
+          <li><a href="index.php?sort=title">Abecedně</a></li>
         </ul>
       </div>
     </div>

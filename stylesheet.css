@@ -329,3 +329,12 @@ ul {
   width: 5rem;
   padding: 0.2rem;
 }
+
+@media (max-width: 960px) {
+  #main {
+    grid: auto / 100%;
+  }
+  #products {
+    grid-area: 1 / 1;
+  }
+}
