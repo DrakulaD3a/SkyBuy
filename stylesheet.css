@@ -226,18 +226,21 @@ ul {
 #products {
   grid-area: 1 / 2;
   background-color: var(--color-blue);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
 }
 
 .post {
+  align-self: center;
   display: grid;
   grid: 20% 10% 70% / 1fr 1fr;
-  gap: 1rem;
+  gap: 2rem;
   max-width: 80%;
-  margin: 2rem 3rem;
   text-decoration: none;
   background-color: var(--color-neon);
-  border: 0.5rem solid var(--color-blue);
   border-radius: 1rem;
+  padding: 1rem;
 }
 
 .post * {
