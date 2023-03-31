@@ -124,7 +124,11 @@ if (!empty($arr)) {
     </div>
 
     <div id="filters">
-      <img src="assets/logo.png" id="filters-logo" class="hidden" />
+      <div id="filters-logo-wrapper-wrapper" class="hidden">
+        <div id="filters-logo-wrapper">
+          <img src="assets/logo.png" id="filters-logo" />
+        </div>
+      </div>
       <div id="filters-inside">
         <h3>Další filtry</h3>
         <h5>Filtrovat:</h5>
@@ -156,77 +160,6 @@ if (!empty($arr)) {
           <h4><?= $object["price"] ?> Kč</h4>
           <p><?= strlen($object["description"]) > 500 ? substr($object["description"], 0, 500) . "..." : $object["description"] ?></p>
         </a>
-
-        <a href="product.php?id=<?= $object["id"] ?>&search=<?= $_GET["search"] ?>" class="post">
-          <img src="data:image/png;base64,<?= $object["pic"] ?>" />
-          <h3><?= $object["title"] ?></h3>
-          <h4><?= $object["price"] ?> Kč</h4>
-          <p><?= strlen($object["description"]) > 500 ? substr($object["description"], 0, 500) . "..." : $object["description"] ?></p>
-        </a>
-
-        <a href="product.php?id=<?= $object["id"] ?>&search=<?= $_GET["search"] ?>" class="post">
-          <img src="data:image/png;base64,<?= $object["pic"] ?>" />
-          <h3><?= $object["title"] ?></h3>
-          <h4><?= $object["price"] ?> Kč</h4>
-          <p><?= strlen($object["description"]) > 500 ? substr($object["description"], 0, 500) . "..." : $object["description"] ?></p>
-        </a>
-
-        <a href="product.php?id=<?= $object["id"] ?>&search=<?= $_GET["search"] ?>" class="post">
-          <img src="data:image/png;base64,<?= $object["pic"] ?>" />
-          <h3><?= $object["title"] ?></h3>
-          <h4><?= $object["price"] ?> Kč</h4>
-          <p><?= strlen($object["description"]) > 500 ? substr($object["description"], 0, 500) . "..." : $object["description"] ?></p>
-        </a>
-
-        <a href="product.php?id=<?= $object["id"] ?>&search=<?= $_GET["search"] ?>" class="post">
-          <img src="data:image/png;base64,<?= $object["pic"] ?>" />
-          <h3><?= $object["title"] ?></h3>
-          <h4><?= $object["price"] ?> Kč</h4>
-          <p><?= strlen($object["description"]) > 500 ? substr($object["description"], 0, 500) . "..." : $object["description"] ?></p>
-        </a>
-
-        <a href="product.php?id=<?= $object["id"] ?>&search=<?= $_GET["search"] ?>" class="post">
-          <img src="data:image/png;base64,<?= $object["pic"] ?>" />
-          <h3><?= $object["title"] ?></h3>
-          <h4><?= $object["price"] ?> Kč</h4>
-          <p><?= strlen($object["description"]) > 500 ? substr($object["description"], 0, 500) . "..." : $object["description"] ?></p>
-        </a>
-
-        <a href="product.php?id=<?= $object["id"] ?>&search=<?= $_GET["search"] ?>" class="post">
-          <img src="data:image/png;base64,<?= $object["pic"] ?>" />
-          <h3><?= $object["title"] ?></h3>
-          <h4><?= $object["price"] ?> Kč</h4>
-          <p><?= strlen($object["description"]) > 500 ? substr($object["description"], 0, 500) . "..." : $object["description"] ?></p>
-        </a>
-
-        <a href="product.php?id=<?= $object["id"] ?>&search=<?= $_GET["search"] ?>" class="post">
-          <img src="data:image/png;base64,<?= $object["pic"] ?>" />
-          <h3><?= $object["title"] ?></h3>
-          <h4><?= $object["price"] ?> Kč</h4>
-          <p><?= strlen($object["description"]) > 500 ? substr($object["description"], 0, 500) . "..." : $object["description"] ?></p>
-        </a>
-
-        <a href="product.php?id=<?= $object["id"] ?>&search=<?= $_GET["search"] ?>" class="post">
-          <img src="data:image/png;base64,<?= $object["pic"] ?>" />
-          <h3><?= $object["title"] ?></h3>
-          <h4><?= $object["price"] ?> Kč</h4>
-          <p><?= strlen($object["description"]) > 500 ? substr($object["description"], 0, 500) . "..." : $object["description"] ?></p>
-        </a>
-
-        <a href="product.php?id=<?= $object["id"] ?>&search=<?= $_GET["search"] ?>" class="post">
-          <img src="data:image/png;base64,<?= $object["pic"] ?>" />
-          <h3><?= $object["title"] ?></h3>
-          <h4><?= $object["price"] ?> Kč</h4>
-          <p><?= strlen($object["description"]) > 500 ? substr($object["description"], 0, 500) . "..." : $object["description"] ?></p>
-        </a>
-
-        <a href="product.php?id=<?= $object["id"] ?>&search=<?= $_GET["search"] ?>" class="post">
-          <img src="data:image/png;base64,<?= $object["pic"] ?>" />
-          <h3><?= $object["title"] ?></h3>
-          <h4><?= $object["price"] ?> Kč</h4>
-          <p><?= strlen($object["description"]) > 500 ? substr($object["description"], 0, 500) . "..." : $object["description"] ?></p>
-        </a>
-
       <?php
       } ?>
 
