@@ -230,7 +230,7 @@ ul {
 
 .post {
   display: grid;
-  grid: 20% 10% 70% / 1fr 1fr;
+  grid: 20% 10% 69% 1% / 1fr 1fr;
   gap: 1rem;
   max-width: 80%;
   margin: 2rem 3rem;
@@ -253,6 +253,13 @@ ul {
   justify-self: center;
 }
 
+.delete-btn {
+  grid-area: 4 / 1;
+  align-self: center;
+  justify-self: center;
+  text-decoration: none;
+}
+
 .post h3 {
   grid-area: 1 / 2;
   margin-top: 1rem;
@@ -269,7 +276,7 @@ ul {
 }
 
 .post p {
-  grid-area: 3 / 2;
+  grid-area: 3 / 2 / span 2;
   overflow: hidden;
   mask-image: linear-gradient(180deg, #000 70%, transparent);
   margin-bottom: 1rem;
