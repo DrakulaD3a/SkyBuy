@@ -225,26 +225,36 @@ ul {
 
 #products {
   grid-area: 1 / 2;
-  background-color: var(--color-neon);
+  background-color: var(--color-blue);
 }
 
 .post {
   display: grid;
-  grid: 17vh 17vh 17vh / 1fr 1fr;
+  grid: 10vh 5vh 35vh / 1fr 1fr;
   gap: 1rem;
   max-width: 50vw;
-  padding: 2rem 3rem;
+  margin: 2rem 3rem;
   text-decoration: none;
+  background-color: var(--color-neon);
+  border: 0.5rem solid var(--color-blue);
+  border-radius: 1rem;
+}
+
+.post *{
+  margin: 0;
 }
 
 .post > img {
   grid-area: 1 / 1 / span 3;
-  max-width: 100%;
-  height: 100%;
+  align-self: center;
+  justify-self: center;
 }
 
 .post h3 {
   grid-area: 1 / 2;
+  margin-top: 1rem;
+  justify-self: center;
+  text-align: center;
 }
 
 .post h3::first-letter {
@@ -258,6 +268,8 @@ ul {
 .post p {
   grid-area: 3 / 2;
   overflow: hidden;
+  mask-image: linear-gradient(180deg, #000 70%, transparent);
+  margin-bottom: 1rem;
 }
 
 .post p::first-letter {

@@ -44,6 +44,7 @@ $user = $query->fetch();
     <link rel="stylesheet" type="text/css" href="stylesheet.css" />
     <link rel="stylesheet" type="text/css" href="stylesheet-product.css" />
     <script src="https://kit.fontawesome.com/d9f7f676cb.js" crossorigin="anonymous"></script>
+    <script defer src="js/img-size-prdct-page.js"></script>
   </head>
   <body>
     <form id="search-bar" action="index.php">

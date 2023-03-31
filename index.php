@@ -64,6 +64,7 @@ if (!empty($arr)) {
   <meta name="description" content="Online bazar pro každého">
   <script src="https://kit.fontawesome.com/d9f7f676cb.js" crossorigin="anonymous"></script>
   <script defer src="js/scroll.js"></script>
+  <script defer src="js/img-size.js"></script>
 </head>
 
 <body>
@@ -132,7 +133,7 @@ if (!empty($arr)) {
       <div id="filters-inside">
         <h3>Další filtry</h3>
         <h5>Filtrovat:</h5>
-        <form>
+        <form method="post">
           <div>
             <label for="min">Cena od:</label>
             <input type="number" name="min" id="min" />
@@ -156,10 +157,10 @@ if (!empty($arr)) {
 
       foreach ($objects as $object) { ?>
         <a href="product.php?id=<?= $object["id"] ?>&search=<?= $_GET["search"] ?>" class="post">
-          <img src="data:image/png;base64,<?= $object["pic"] ?>" />
+          <img class="product-img" src="data:image/png;base64,<?= $object["pic"] ?>" />
           <h3><?= $object["title"] ?></h3>
           <h4><?= $object["price"] ?> Kč</h4>
-          <p><?= strlen($object["description"]) > 300 ? substr($object["description"], 0, 300) . "..." : $object["description"] ?></p>
+          <p  ><?= $object["description"] ?></p>
         </a>
       <?php
       } ?>
