@@ -216,6 +216,7 @@ ul {
 #products {
   grid-area: 1 / 2;
   background-color: var(--color-neon);
+  overflow-y: scroll;
 }
 
 .post {
@@ -256,6 +257,7 @@ ul {
 #filters {
   grid-area: 1 / 3;
   background-color: var(--color-blue);
+  overflow-y: scroll;
 }
 
 #filters-inside {
