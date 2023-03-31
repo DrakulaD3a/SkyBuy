@@ -225,7 +225,7 @@ ul {
 
 #products {
   grid-area: 1 / 2;
-  background-color: var(--color-neon);
+  background-color: var(--color-blue);
 }
 
 .post {
@@ -233,12 +233,17 @@ ul {
   grid: 17vh 17vh 17vh / 1fr 1fr;
   gap: 1rem;
   max-width: 50vw;
-  padding: 2rem 3rem;
+  margin: 2rem 3rem;
   text-decoration: none;
+  background-color: var(--color-neon);
+  border: 0.5rem solid var(--color-blue);
+  border-radius: 1rem;
 }
 
 .post > img {
   grid-area: 1 / 1 / span 3;
+  align-self: center;
+  justify-self: center;
 }
 
 .post h3 {
@@ -255,6 +260,8 @@ ul {
 
 .post p {
   grid-area: 3 / 2;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent);
 }
 
 .post p::first-letter {
