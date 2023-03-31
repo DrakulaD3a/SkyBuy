@@ -131,7 +131,7 @@ ul {
 
 #main {
   display: grid;
-  grid: auto / 1fr 50rem 1fr;
+  grid: auto / 2fr 5fr 2fr;
 }
 
 #main > * {
@@ -220,16 +220,16 @@ ul {
 
 .post {
   display: grid;
-  grid: 2rem 2rem 2rem / 1fr 1fr;
+  grid: 17vh 17vh 17vh / 1fr 1fr;
   gap: 1rem;
-  max-height: 10rem;
-  padding: 5rem 3rem;
+  max-width: 50vw;
+  padding: 2rem 3rem;
   text-decoration: none;
 }
 
 .post > img {
   grid-area: 1 / 1 / span 3;
-  width: 100%;
+  max-width: 100%;
   height: 100%;
 }
 

@@ -15,7 +15,7 @@ html,body{
 }
 
 img{
-  width: calc(50vw - 5rem);
+  /*width: calc(50vw - 5rem);*/
 }
 
 li{
