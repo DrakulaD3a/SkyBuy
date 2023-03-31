@@ -42,8 +42,6 @@ if (!empty($_POST["max"])) {
 $qry .= "ORDER BY ";
 $qry .= $_GET["sort"] == "price" ? "price ASC" : "date DESC";
 
-var_dump($qry);
-
 $query = $db->prepare($qry);
 
 if (!empty($arr)) {
