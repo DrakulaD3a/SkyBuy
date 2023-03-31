@@ -158,7 +158,7 @@ if (!empty($arr)) {
           <img src="data:image/png;base64,<?= $object["pic"] ?>" />
           <h3><?= $object["title"] ?></h3>
           <h4><?= $object["price"] ?> Kč</h4>
-          <p><?= strlen($object["description"]) > 500 ? substr($object["description"], 0, 500) . "..." : $object["description"] ?></p>
+          <p><?= strlen($object["description"]) > 300 ? substr($object["description"], 0, 300) . "..." : $object["description"] ?></p>
         </a>
       <?php
       } ?>
