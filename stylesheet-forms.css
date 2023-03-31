@@ -19,7 +19,7 @@ input[type="number"] {
 }
 
 input[type="file"] {
-  padding-left: calc(50% - 10px);
+  padding-left: calc(50% - 14.7rem);
   color: transparent;
   background-color: transparent;
   text-align: center;
