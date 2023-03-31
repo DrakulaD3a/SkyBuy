@@ -67,7 +67,7 @@ if (!empty($arr)) {
   <script defer src="js/img-size.js"></script>
 </head>
 
-<body>
+<body id="index-body">
 
   <div id="logo">
     <img src="assets/logo.png" />
