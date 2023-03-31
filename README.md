@@ -1,4 +1,4 @@
-# Tato branch je zastaralá, nová hlavní branch je redesign
+# Tato branch je zastaralá, nová hlavní branch je redesign.
 
 # Php projekt z AS
 
