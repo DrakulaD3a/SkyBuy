@@ -32,15 +32,17 @@ if (!empty($_GET["category"])) {
   array_push($arr, $_GET["category"]);
 }
 if (!empty($_POST["min"])) {
-  $qry .= ($done ? "AND " : "WHERE ") . "price > " . $_POST["min"] . " ";
+  $qry .= ($done ? "AND " : "WHERE ") . "price >= " . $_POST["min"] . " ";
   $done = true;
 }
 if (!empty($_POST["max"])) {
-  $qry .= ($done ? "AND " : "WHERE ") . "price < " . $_POST["max"] . " ";
+  $qry .= ($done ? "AND " : "WHERE ") . "price <= " . $_POST["max"] . " ";
 }
 
 $qry .= "ORDER BY ";
 $qry .= $_GET["sort"] == "price" ? "price ASC" : "date DESC";
+
+var_dump($qry);
 
 $query = $db->prepare($qry);
 
