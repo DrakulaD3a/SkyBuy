@@ -156,15 +156,13 @@ $query->execute($arr);
       $objects = $query->fetchAll();
 
       foreach ($objects as $object) { ?>
-        <a href="product.php?id=<?= $object["id"] ?>&search=<?= $_GET["search"] ?>" class="post">
+        <div class="post">
           <img class="product-img" src="data:image/png;base64,<?= $object["pic"] ?>" />
           <h3><?= $object["title"] ?></h3>
           <h4><?= $object["price"] ?> Kč</h4>
           <p><?= $object["description"] ?></p>
-          <a class="delete-btn" href="products.php?product_id=<?= $object["id"] ?>">
-            Smazat
-          </a>
-        </a>
+          <a href="products.php?product_id=<?= $object["id"] ?>" class="delete-btn">Smazat</a>
+        </div>
       <?php
       } ?>
 
