@@ -261,7 +261,7 @@ ul {
 .post p {
   grid-area: 3 / 2;
   overflow: hidden;
-  -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent);
+  mask-image: linear-gradient(180deg, #000 60%, transparent);
 }
 
 .post p::first-letter {
