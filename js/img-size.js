@@ -1,13 +1,9 @@
-console.log(document.getElementsByClassName("post"));
-
 let maxWidth =
   document.getElementsByClassName("post")[0].clientWidth / 2 -
   convertRemToPixels(5.5);
 let maxHeight =
   document.getElementsByClassName("post")[0].clientHeight -
   convertRemToPixels(4);
-console.log(maxWidth);
-console.log(maxHeight);
 
 let imgs = document.getElementsByClassName("product-img");
 for (let element of imgs) {
@@ -25,7 +21,6 @@ for (let element of imgs) {
       element.width = element.height * propors;
     } else {
       element.width = maxWidth;
-      console.log(element.naturalWidth);
       element.height = element.width / propors;
     }
   } else if (element.naturalWidth > maxWidth) {
@@ -65,9 +60,7 @@ window.addEventListener("resize", () => {
     } else if (element.naturalWidth > maxWidth) {
       element.width = maxWidth;
     } else if (element.naturalHeight > maxHeight) {
-      //let propors = element.naturalWidth / element.naturalHeight;
       element.height = maxHeight;
-      //element.width = element.height * propors;
     }
   }
 });
