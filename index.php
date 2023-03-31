@@ -159,7 +159,7 @@ if (!empty($arr)) {
           <img class="product-img" src="data:image/png;base64,<?= $object["pic"] ?>" />
           <h3><?= $object["title"] ?></h3>
           <h4><?= $object["price"] ?> Kč</h4>
-          <p  ><?= $object["description"] ?></p>
+          <p><?= $object["description"] ?></p>
         </a>
       <?php
       } ?>
