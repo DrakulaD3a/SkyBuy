@@ -64,7 +64,7 @@ if (!empty($arr)) {
   <meta name="description" content="Online bazar pro každého">
   <script src="https://kit.fontawesome.com/d9f7f676cb.js" crossorigin="anonymous"></script>
   <script defer src="js/scroll.js"></script>
-  <script src="js/img-size.js"></script>
+  <script defer src="js/img-size.js"></script>
 </head>
 
 <body>
